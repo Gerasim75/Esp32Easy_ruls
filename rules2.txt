@@ -4,17 +4,37 @@ let,90,1
 if [st_climate#ac]=1
 GPIO,27,0
 TaskValueSet,9,2,0
-elseif [out#Temp]<16 and [room#Temp]<22.5 and [tank#Temp]>25
+elseif [out#Temp]<16
+if [room#Temp]<22.5
+if [tank#Temp]>25
 GPIO,27,1
 TaskValueSet,9,2,1
 else
 GPIO,27,0
 TaskValueSet,9,2,0
 endif
+else
+GPIO,27,0
+TaskValueSet,9,2,0
+endif
+else
+GPIO,27,0
+TaskValueSet,9,2,0
+endif
 
-if [room#Temp]>=28 and [out#Temp]>=27 and [var#75]=1
+if [room#Temp]>=28
+if [out#Temp]>=27
+if [var#75]=1
 PCFGPIO,7,1
 TaskValueSet,9,3,1
+else
+PCFGPIO,7,0
+TaskValueSet,9,3,0
+endif
+else
+PCFGPIO,7,0
+TaskValueSet,9,3,0
+endif
 else
 PCFGPIO,7,0
 TaskValueSet,9,3,0
@@ -41,11 +61,48 @@ elseif [room#Humi]>65
 PCFGPIO,8,1
 TaskValueSet,9,4,1
 
-elseif [room#Temp]>=28 and [out#Temp]<=25 and [var#75]=1
+elseif [room#Temp]>=28
+if [out#Temp]<=25
+if [var#75]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+else
+PCFGPIO,8,0
+TaskValueSet,9,4,0
+endif
+else
+PCFGPIO,8,0
+TaskValueSet,9,4,0
+endif
+elseif [var#61]=1
 PCFGPIO,8,1
 TaskValueSet,9,4,1
 
-elseif [var#61]=1 or [var#62]=1 or [var#63]=1 or [var#64]=1 or [var#65]=1 or [var#66]=1 or [var#67]=1 or [var#68]=1
+elseif [var#62]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+
+elseif [var#63]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+
+elseif [var#64]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+
+elseif [var#65]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+
+elseif [var#66]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+
+elseif [var#67]=1
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+
+elseif [var#68]=1
 PCFGPIO,8,1
 TaskValueSet,9,4,1
 

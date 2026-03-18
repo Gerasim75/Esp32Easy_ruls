@@ -34,7 +34,12 @@ if [leak#State]=1
 PCFGPIO,1,0
 PCFGPIO,2,1
 TaskValueSet,st_main,1,0
+elseif [leak#State]=0
+PCFGPIO,1,1
+PCFGPIO,2,0
+TaskValueSet,st_main,1,1
 else
+// fallback в безопасное состояние
 PCFGPIO,1,1
 PCFGPIO,2,0
 TaskValueSet,st_main,1,1
@@ -48,6 +53,8 @@ PCFGPIO,5,0
 TaskValueSet,10,2,0
 PCFGPIO,4,0
 TaskValueSet,10,3,0
+elseif [pwr#State]=1
+// питание включено: без принудительных действий, логика ниже по событиям/режимам
 endif
 endon
 
@@ -121,8 +128,12 @@ if [st_climate#ac]=1
 // AC включен → заслонка закрыта
 Servo,1,19,-85
 TaskValueSet,8,1,1
-else
+elseif [st_climate#ac]=0
 // AC выключен → заслонка открыта
+Servo,1,19,85
+TaskValueSet,8,1,0
+else
+// fallback: считаем AC выключенным
 Servo,1,19,85
 TaskValueSet,8,1,0
 endif
