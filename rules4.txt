@@ -95,8 +95,6 @@ else
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
 endif
-
-event,EVAL_BOILER
 endon
 
 // ===== UF =====
