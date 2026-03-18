@@ -1,811 +1,819 @@
-5239: ACT  : PCFGPIO,6,0
-5243: PCF: port#6: set to 0
-5246: ACT  : PCFGPIO,7,0
-5250: PCF: port#7: set to 0
-5252: ACT  : PCFGPIO,8,0
-5256: PCF: port#8: set to 0
-5259: ACT  : GPIO,26,0
-5262: GPIO: port#26: set to 0
-5275: ACT  : GPIO,27,0
-5278: GPIO: port#27: set to 0
-5281: ACT  : Servo,1,19,85
-5365: Servo : GPIO 19 Servo set to 85
-5367: ACT  : TaskValueSet,st_main,1,1
-5442: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
-5455: ACT  : TaskValueSet,st_main,2,0
-5461: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
-5463: ACT  : TaskValueSet,st_main,3,0
-5479: taskValueSet: TaskValueSet,st_main,3,0  taskindex: 9 varNr: 2 result: 0.000000 type: 7
-5481: ACT  : TaskValueSet,st_main,4,0
-5488: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-5500: ACT  : TaskValueSet,st_climate,1,0
-5506: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-5509: ACT  : TaskValueSet,st_climate,2,0
-5526: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-5528: ACT  : TaskValueSet,st_climate,3,0
-5544: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-5546: ACT  : TaskValueSet,st_climate,4,0
-5552: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-5565: ACT  : TaskValueSet,st_aux,1,0
-5571: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-5584: ACT  : TaskValueSet,st_aux,2,0
-5589: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
-5592: ACT  : let,40,2
-5597: ACT  : let,41,2
-5602: ACT  : let,42,2
-5607: ACT  : let,43,2
-5613: ACT  : TaskValueSet,st_mode,1,2
-5620: taskValueSet: TaskValueSet,st_mode,1,2  taskindex: 6 varNr: 0 result: 2.000000 type: 7
-5623: ACT  : TaskValueSet,st_mode,2,2
-5639: taskValueSet: TaskValueSet,st_mode,2,2  taskindex: 6 varNr: 1 result: 2.000000 type: 7
-5641: ACT  : TaskValueSet,st_mode,3,2
-5647: taskValueSet: TaskValueSet,st_mode,3,2  taskindex: 6 varNr: 2 result: 2.000000 type: 7
-5660: ACT  : TaskValueSet,st_mode,4,2
-5667: taskValueSet: TaskValueSet,st_mode,4,2  taskindex: 6 varNr: 3 result: 2.000000 type: 7
-5669: ACT  : let,50,0
-5674: ACT  : let,51,0
-5679: ACT  : let,52,0
-5685: ACT  : let,53,0
-5690: ACT  : let,54,0
-5695: ACT  : let,55,0
-5700: ACT  : let,56,0
-5705: ACT  : let,61,0
-5710: ACT  : let,62,0
-5716: ACT  : let,63,0
-5722: ACT  : let,64,0
-5727: ACT  : let,65,0
-5732: ACT  : let,66,0
-5737: ACT  : let,67,0
-5742: ACT  : let,68,0
-5747: ACT  : let,90,0
-5752: ACT  : let,91,0
-5761: WIFI : Connected! AP: Home (64:D1:54:3D:2F:76) Ch: 1 Duration: 749 ms
-5762: WIFI : Arduino wifi status: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. 
-5775: WIFI : Static IP: 192.168.1.236 (ESP32-1-Easy-4) GW: 192.168.1.0 SN: 255.255.255.0 DNS: 192.168.1.1 / 0.0.0.0   duration: 2289 
-5786: Skip saving SecuritySettings, not changed
-5817: UDP : Start listening on port 8266
-5819: firstLoopConnectionsEstablished
-5824: Internal command: All checked OK
-5830: EVENT: TaskInit#st_mode=7,1
-5979: Webserver: stop
-5999: NTP  : NTP replied: delay 12 ms round-trip delay: 14 ms offset: 20530T17:31:30.390,^  t0: 1773854792.668,^  t1: 5.981,^  t2: 17
-6011: Time set to 1773855096.388
-6023: Current Time Zone:  DST time start: 2026-03-29 02:00:00 offset: 180 min STD time start: 2026-10-25 01:00:00 offset: 120 min
-6025: Local time: 2026-03-18 19:31:36
-6035: Webserver: start
-6040: Dummy: value 1: 2
-6042: Dummy: value 2: 2
-6043: Dummy: value 3: 2
-6054: Dummy: value 4: 2
-6066: Dummy: value 1: 0
-6068: Dummy: value 2: 0
-6074: Dummy: value 1: 0
-6075: Dummy: value 2: 0
-6076: Dummy: value 3: 0
-6088: Dummy: value 4: 0
-6097: Dummy: value 1: 1
-6099: Dummy: value 2: 0
-6100: Dummy: value 3: 0
-6111: Dummy: value 4: 0
-6356: SW   : State 0
-6361: SW   : State 1
-6368: SW   : State 1
-6397: DHT  : Temperature: 22.90
-6399: DHT  : Humidity: 47.0
-6427: EVENT: TaskInit#st_aux=8,1
-6557: EVENT: TaskInit#st_climate=9,1
-6690: GPIO  : Port=33 State=1 Output value=1
-6693: GPIO  : Port=34 State=1 Output value=0
-6706: MQTT : Start background connect for controller 2
-6708: MQTT : Connecting to: 192.168.1.23:1883
-6719: MQTT : Intentional reconnect
-6737: EVENT: TaskInit#st_main=10,1
-6874: EVENT: Clock#Time=Wed,19:31
-7019: EVENT: TaskInit#OLED=12,1
-7159: MQTT : Connected to broker with client ID: ESP32_1_Easy_4_4
-7167: MQTT : Subscribed to: cat_home/ESP32_1_Easy_4/cmd/#
-7169: MQTT : Background Connect request Ready
-7185: MQTT : Background Connect request success, took 47 msec
-7296: EVENT: TaskInit#tank=13,1
-7429: EVENT: TaskInit#floor=14,1
-7566: WD   : Uptime 0  ConnectFailures 0 FreeMem 159988 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-7595: DS   : Temperature: 50.38 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-7619: DS   : Temperature: 20.94 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-7642: DS   : Temperature: 6.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-7669: static_file: /esp.css to: 192.168.1.1
-7739: EVENT: TaskInit#dvig=15,1
-7886: EVENT: TaskInit#leak=16,1
-8014: EVENT: TaskInit#pwr=17,1
-8158: EVENT: TaskInit#room=18,1
-8297: EVENT: TaskInit#out=19,1
-8620: EVENT: WiFi#ChangedAccesspoint
-8744: EVENT: WiFi#ChangedWiFichannel
-8897: EVENT: WiFi#Connected
-9024: EVENT: p2pNode#Connected=4,'ESP32_1_Easy','20260121'
-9178: EVENT: Time#Initialized
-9219: ACT  : event,EVAL_DHW
-9222: EVENT: EVAL_DHW
-9291: ACT  : LogEntry,'DHW -> OFF (NO WINDOW)'
-9294: DHW -> OFF (NO WINDOW)
-9296: ACT  : PCFGPIO,5,0
-9301: PCF: port#5: set to 0
-9304: ACT  : TaskValueSet,st_main,2,0
-9310: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
-9325: ACT  : event,EVAL_BOILER
-9328: EVENT: EVAL_BOILER
-9430: ACT  : event,BOILER_OFF
-9433: EVENT: BOILER_OFF
-9472: ACT  : LogEntry,'BOILER -> OFF'
-9474: BOILER -> OFF
-9476: ACT  : PCFGPIO,3,0
-9480: PCF: port#3: set to 0
-9483: ACT  : TaskValueSet,st_climate,1,0
-9499: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-9502: ACT  : PCFGPIO,6,0
-9506: PCF: port#6: set to 0
-9508: ACT  : TaskValueSet,st_main,4,0
-9515: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-9522: ACT  : event,EVAL_CLIMATE
-9535: EVENT: EVAL_CLIMATE
-9677: ACT  : LogEntry,'AC -> OFF'
-9679: AC -> OFF
-9681: ACT  : PCFGPIO,7,0
-9685: PCF: port#7: set to 0
-9687: ACT  : TaskValueSet,st_climate,3,0
-9693: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-9704: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-9717: VALVE -> OPEN (AC OFF)
-9720: ACT  : Servo,1,19,85
-9804: Servo : GPIO 19 Servo set to 85
-9807: ACT  : TaskValueSet,st_aux,1,0
-9823: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-9864: ACT  : LogEntry,'LPUMP -> OFF'
-9867: LPUMP -> OFF
-9869: ACT  : GPIO,27,0
-9872: GPIO: port#27: set to 0
-9884: ACT  : TaskValueSet,st_climate,2,0
-9890: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-10008: ACT  : LogEntry,'VENT -> OFF'
-10011: VENT -> OFF
-10013: ACT  : PCFGPIO,8,0
-10017: PCF: port#8: set to 0
-10019: ACT  : TaskValueSet,st_climate,4,0
-10036: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-10039: ACT  : event,EVAL_BOILER
-10042: EVENT: EVAL_BOILER
-10120: ACT  : event,BOILER_OFF
-10123: EVENT: BOILER_OFF
-10149: EVENT: Error: Nesting level exceeded!
-10156: ACT  : event,EVAL_UF
-10159: EVENT: EVAL_UF
-10291: ACT  : LogEntry,'UF -> OFF'
-10294: UF -> OFF
-10296: ACT  : GPIO,26,0
-10299: GPIO: port#26: set to 0
-10301: ACT  : TaskValueSet,st_aux,2,0
-10316: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
-10325: EVENT: st_mode#dhwmode=2
-10565: EVENT: st_mode#ventmode=2
-10709: EVENT: st_mode#ufmode=2
-10827: EVENT: st_mode#xtenmode=2
-10940: EVENT: st_aux#valve=0
-11066: EVENT: st_aux#uf=0
-11180: EVENT: st_climate#bpump=0
-11308: EVENT: st_climate#lpump=0
-11425: EVENT: st_climate#ac=0
-11552: EVENT: st_climate#vent=0
-11665: EVENT: st_main#water=1
-11796: EVENT: st_main#dhw=0
-11910: EVENT: st_main#xten=0
-12066: EVENT: st_main#boiler=0
-12183: EVENT: dvig#State=0
-12292: EVENT: leak#State=1
-12297: ACT  : let,90,1
-12302: ACT  : LogEntry,'LEAK=1 -> WATER CLOSED'
-12305: LEAK=1 -> WATER CLOSED
-12306: ACT  : PCFGPIO,1,0
-12310: PCF: port#1: set to 0
-12323: ACT  : PCFGPIO,2,1
-12326: PCF: port#2: set to 1
-12329: ACT  : TaskValueSet,st_main,1,0
-12334: taskValueSet: TaskValueSet,st_main,1,0  taskindex: 9 varNr: 0 result: 0.000000 type: 7
-12346: ACT  : event,EVAL_DHW
-12349: EVENT: EVAL_DHW
-12397: ACT  : LogEntry,'DHW -> OFF (NO WINDOW)'
-12399: DHW -> OFF (NO WINDOW)
-12401: ACT  : PCFGPIO,5,0
-12405: PCF: port#5: set to 0
-12418: ACT  : TaskValueSet,st_main,2,0
-12423: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
-12437: ACT  : event,EVAL_XTEN
-12440: EVENT: EVAL_XTEN
-12485: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-12488: XTEN -> ON (AUTO COLD)
-12490: ACT  : PCFGPIO,4,1
-12494: PCF: port#4: set to 1
-12506: ACT  : TaskValueSet,st_main,3,1
-12512: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-12526: ACT  : event,EVAL_BOILER
-12529: EVENT: EVAL_BOILER
-12605: ACT  : event,BOILER_OFF
-12608: EVENT: BOILER_OFF
-12643: ACT  : LogEntry,'BOILER -> OFF'
-12646: BOILER -> OFF
-12648: ACT  : PCFGPIO,3,0
-12652: PCF: port#3: set to 0
-12654: ACT  : TaskValueSet,st_climate,1,0
-12659: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-12672: ACT  : PCFGPIO,6,0
-12676: PCF: port#6: set to 0
-12679: ACT  : TaskValueSet,st_main,4,0
-12685: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-12693: ACT  : event,EVAL_CLIMATE
-12696: EVENT: EVAL_CLIMATE
-12832: ACT  : LogEntry,'AC -> OFF'
-12835: AC -> OFF
-12836: ACT  : PCFGPIO,7,0
-12840: PCF: port#7: set to 0
-12853: ACT  : TaskValueSet,st_climate,3,0
-12858: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-12869: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-12872: VALVE -> OPEN (AC OFF)
-12874: ACT  : Servo,1,19,85
-12958: Servo : GPIO 19 Servo set to 85
-12960: ACT  : TaskValueSet,st_aux,1,0
-12965: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-13007: ACT  : LogEntry,'LPUMP -> OFF'
-13010: LPUMP -> OFF
-13012: ACT  : GPIO,27,0
-13015: GPIO: port#27: set to 0
-13027: ACT  : TaskValueSet,st_climate,2,0
-13033: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-13148: ACT  : LogEntry,'VENT -> OFF'
-13151: VENT -> OFF
-13152: ACT  : PCFGPIO,8,0
-13156: PCF: port#8: set to 0
-13159: ACT  : TaskValueSet,st_climate,4,0
-13175: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-13178: ACT  : event,EVAL_BOILER
-13180: EVENT: EVAL_BOILER
-13258: ACT  : event,BOILER_OFF
-13261: EVENT: BOILER_OFF
-13286: EVENT: Error: Nesting level exceeded!
-13292: ACT  : event,EVAL_UF
-13294: EVENT: EVAL_UF
-13427: ACT  : LogEntry,'UF -> OFF'
-13429: UF -> OFF
-13431: ACT  : GPIO,26,0
-13434: GPIO: port#26: set to 0
-13447: ACT  : TaskValueSet,st_aux,2,0
-13452: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
-13599: EVENT: pwr#State=1
-13608: ACT  : let,90,1
-13614: ACT  : event,EVAL_DHW
-13617: EVENT: EVAL_DHW
-13664: ACT  : LogEntry,'DHW -> OFF (NO WINDOW)'
-13667: DHW -> OFF (NO WINDOW)
-13669: ACT  : PCFGPIO,5,0
-13673: PCF: port#5: set to 0
-13686: ACT  : TaskValueSet,st_main,2,0
-13691: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
-13706: ACT  : event,EVAL_XTEN
-13709: EVENT: EVAL_XTEN
-13753: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-13756: XTEN -> ON (AUTO COLD)
-13758: ACT  : PCFGPIO,4,1
-13762: PCF: port#4: set to 1
-13774: ACT  : TaskValueSet,st_main,3,1
-13780: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-13794: ACT  : event,EVAL_BOILER
-13797: EVENT: EVAL_BOILER
-13872: ACT  : event,BOILER_OFF
-13875: EVENT: BOILER_OFF
-13910: ACT  : LogEntry,'BOILER -> OFF'
-13913: BOILER -> OFF
-13915: ACT  : PCFGPIO,3,0
-13920: PCF: port#3: set to 0
-13922: ACT  : TaskValueSet,st_climate,1,0
-13937: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-13940: ACT  : PCFGPIO,6,0
-13944: PCF: port#6: set to 0
-13946: ACT  : TaskValueSet,st_main,4,0
-13952: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-13959: ACT  : event,EVAL_CLIMATE
-13972: EVENT: EVAL_CLIMATE
-14108: ACT  : LogEntry,'AC -> OFF'
-14110: AC -> OFF
-14113: ACT  : PCFGPIO,7,0
-14117: PCF: port#7: set to 0
-14120: ACT  : TaskValueSet,st_climate,3,0
-14125: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-14136: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-14149: VALVE -> OPEN (AC OFF)
-14151: ACT  : Servo,1,19,85
-14234: Servo : GPIO 19 Servo set to 85
-14237: ACT  : TaskValueSet,st_aux,1,0
-14242: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-14282: ACT  : LogEntry,'LPUMP -> OFF'
-14285: LPUMP -> OFF
-14287: ACT  : GPIO,27,0
-14290: GPIO: port#27: set to 0
-14302: ACT  : TaskValueSet,st_climate,2,0
-14308: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-14422: ACT  : LogEntry,'VENT -> OFF'
-14424: VENT -> OFF
-14427: ACT  : PCFGPIO,8,0
-14431: PCF: port#8: set to 0
-14433: ACT  : TaskValueSet,st_climate,4,0
-14449: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-14452: ACT  : event,EVAL_BOILER
-14455: EVENT: EVAL_BOILER
-14531: ACT  : event,BOILER_OFF
-14534: EVENT: BOILER_OFF
-14558: EVENT: Error: Nesting level exceeded!
-14566: ACT  : event,EVAL_UF
-14568: EVENT: EVAL_UF
-14699: ACT  : LogEntry,'UF -> OFF'
-14701: UF -> OFF
-14703: ACT  : GPIO,26,0
-14706: GPIO: port#26: set to 0
-14718: ACT  : TaskValueSet,st_aux,2,0
-14724: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
-14730: EVENT: room#Temp=22.90
-14753: ACT  : let,90,1
-14758: ACT  : event,EVAL_CLIMATE
-14760: EVENT: EVAL_CLIMATE
-14895: ACT  : LogEntry,'AC -> OFF'
-14897: AC -> OFF
-14899: ACT  : PCFGPIO,7,0
-14903: PCF: port#7: set to 0
-14905: ACT  : TaskValueSet,st_climate,3,0
-14921: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-14932: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-14935: VALVE -> OPEN (AC OFF)
-14937: ACT  : Servo,1,19,85
-15021: Servo : GPIO 19 Servo set to 85
-15023: ACT  : TaskValueSet,st_aux,1,0
-15028: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-15070: ACT  : LogEntry,'LPUMP -> OFF'
-15073: LPUMP -> OFF
-15075: ACT  : GPIO,27,0
-15078: GPIO: port#27: set to 0
-15090: ACT  : TaskValueSet,st_climate,2,0
-15096: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-15210: ACT  : LogEntry,'VENT -> OFF'
-15212: VENT -> OFF
-15214: ACT  : PCFGPIO,8,0
-15218: PCF: port#8: set to 0
-15221: ACT  : TaskValueSet,st_climate,4,0
-15226: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-15239: ACT  : event,EVAL_BOILER
-15242: EVENT: EVAL_BOILER
-15318: ACT  : event,BOILER_OFF
-15320: EVENT: BOILER_OFF
-15345: EVENT: Error: Nesting level exceeded!
-16396: ACT  : TaskValueSet,st_main,2,0
-16411: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
-16426: ACT  : event,EVAL_XTEN
-16428: EVENT: EVAL_XTEN
-16473: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-16476: XTEN -> ON (AUTO COLD)
-16478: ACT  : PCFGPIO,4,1
-16482: PCF: port#4: set to 1
-16494: ACT  : TaskValueSet,st_main,3,1
-16500: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-16514: ACT  : event,EVAL_BOILER
-16517: EVENT: EVAL_BOILER
-16594: ACT  : event,BOILER_OFF
-16597: EVENT: BOILER_OFF
-16631: ACT  : LogEntry,'BOILER -> OFF'
-16634: BOILER -> OFF
-16636: ACT  : PCFGPIO,3,0
-16640: PCF: port#3: set to 0
-16652: ACT  : TaskValueSet,st_climate,1,0
-16657: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-16660: ACT  : PCFGPIO,6,0
-16674: PCF: port#6: set to 0
-16677: ACT  : TaskValueSet,st_main,4,0
-16683: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-16691: ACT  : event,EVAL_CLIMATE
-16694: EVENT: EVAL_CLIMATE
-16830: ACT  : LogEntry,'AC -> OFF'
-16832: AC -> OFF
-16834: ACT  : PCFGPIO,7,0
-16838: PCF: port#7: set to 0
-16840: ACT  : TaskValueSet,st_climate,3,0
-16846: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-16856: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-16869: VALVE -> OPEN (AC OFF)
-16871: ACT  : Servo,1,19,85
-16955: Servo : GPIO 19 Servo set to 85
-16957: ACT  : TaskValueSet,st_aux,1,0
-16962: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-17004: ACT  : LogEntry,'LPUMP -> OFF'
-17007: LPUMP -> OFF
-17009: ACT  : GPIO,27,0
-17012: GPIO: port#27: set to 0
-17024: ACT  : TaskValueSet,st_climate,2,0
-17030: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-17144: ACT  : LogEntry,'VENT -> OFF'
-17146: VENT -> OFF
-17148: ACT  : PCFGPIO,8,0
-17152: PCF: port#8: set to 0
-17154: ACT  : TaskValueSet,st_climate,4,0
-17160: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-17173: ACT  : event,EVAL_BOILER
-17176: EVENT: EVAL_BOILER
-17252: ACT  : event,BOILER_OFF
-17255: EVENT: BOILER_OFF
-17279: EVENT: Error: Nesting level exceeded!
-17287: ACT  : event,EVAL_UF
-17289: EVENT: EVAL_UF
-17421: ACT  : LogEntry,'UF -> OFF'
-17423: UF -> OFF
-17425: ACT  : GPIO,26,0
-17429: GPIO: port#26: set to 0
-17441: ACT  : TaskValueSet,st_aux,2,0
-17446: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
-17454: EVENT: MQTT#Connected
-17567: EVENT: tank#Temp=50.38
-17591: ACT  : let,90,1
-17596: ACT  : event,EVAL_XTEN
-17599: EVENT: EVAL_XTEN
-17643: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-17645: XTEN -> ON (AUTO COLD)
-17647: ACT  : PCFGPIO,4,1
-17651: PCF: port#4: set to 1
-17663: ACT  : TaskValueSet,st_main,3,1
-17669: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-17683: ACT  : event,EVAL_BOILER
-17686: EVENT: EVAL_BOILER
-17761: ACT  : event,BOILER_OFF
-17764: EVENT: BOILER_OFF
-17799: ACT  : LogEntry,'BOILER -> OFF'
-17801: BOILER -> OFF
-17804: ACT  : PCFGPIO,3,0
-17808: PCF: port#3: set to 0
-17810: ACT  : TaskValueSet,st_climate,1,0
-17816: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-17829: ACT  : PCFGPIO,6,0
-17832: PCF: port#6: set to 0
-17835: ACT  : TaskValueSet,st_main,4,0
-17850: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-17858: ACT  : event,EVAL_CLIMATE
-17861: EVENT: EVAL_CLIMATE
-17996: ACT  : LogEntry,'AC -> OFF'
-17998: AC -> OFF
-18000: ACT  : PCFGPIO,7,0
-18005: PCF: port#7: set to 0
-18007: ACT  : TaskValueSet,st_climate,3,0
-18013: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-18024: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-18027: VALVE -> OPEN (AC OFF)
-18039: ACT  : Servo,1,19,85
-18123: Servo : GPIO 19 Servo set to 85
-18125: ACT  : TaskValueSet,st_aux,1,0
-18140: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-18181: ACT  : LogEntry,'LPUMP -> OFF'
-18183: LPUMP -> OFF
-18185: ACT  : GPIO,27,0
-18189: GPIO: port#27: set to 0
-18201: ACT  : TaskValueSet,st_climate,2,0
-18207: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-18320: ACT  : LogEntry,'VENT -> OFF'
-18323: VENT -> OFF
-18325: ACT  : PCFGPIO,8,0
-18329: PCF: port#8: set to 0
-18341: ACT  : TaskValueSet,st_climate,4,0
-18347: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-18350: ACT  : event,EVAL_BOILER
-18363: EVENT: EVAL_BOILER
-18439: ACT  : event,BOILER_OFF
-18442: EVENT: BOILER_OFF
-18467: EVENT: Error: Nesting level exceeded!
-18474: EVENT: floor#Temp=20.94
-18771: EVENT: out#Temp=6.00
-18795: ACT  : let,90,1
-18800: ACT  : event,EVAL_XTEN
-18803: EVENT: EVAL_XTEN
-18848: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-18850: XTEN -> ON (AUTO COLD)
-18852: ACT  : PCFGPIO,4,1
-18856: PCF: port#4: set to 1
-18869: ACT  : TaskValueSet,st_main,3,1
-18875: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-18889: ACT  : event,EVAL_BOILER
-18891: EVENT: EVAL_BOILER
-18967: ACT  : event,BOILER_OFF
-18970: EVENT: BOILER_OFF
-19005: ACT  : LogEntry,'BOILER -> OFF'
-19007: BOILER -> OFF
-19009: ACT  : PCFGPIO,3,0
-19013: PCF: port#3: set to 0
-19025: ACT  : TaskValueSet,st_climate,1,0
-19031: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-19034: ACT  : PCFGPIO,6,0
-19038: PCF: port#6: set to 0
-19040: ACT  : TaskValueSet,st_main,4,0
-19056: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-19064: ACT  : event,EVAL_CLIMATE
-19066: EVENT: EVAL_CLIMATE
-19201: ACT  : LogEntry,'AC -> OFF'
-19203: AC -> OFF
-19205: ACT  : PCFGPIO,7,0
-19209: PCF: port#7: set to 0
-19211: ACT  : TaskValueSet,st_climate,3,0
-19217: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-19227: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-19230: VALVE -> OPEN (AC OFF)
-19243: ACT  : Servo,1,19,85
-19326: Servo : GPIO 19 Servo set to 85
-19329: ACT  : TaskValueSet,st_aux,1,0
-19335: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-19376: ACT  : LogEntry,'LPUMP -> OFF'
-19378: LPUMP -> OFF
-19380: ACT  : GPIO,27,0
-19383: GPIO: port#27: set to 0
-19396: ACT  : TaskValueSet,st_climate,2,0
-19401: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-19515: ACT  : LogEntry,'VENT -> OFF'
-19517: VENT -> OFF
-19519: ACT  : PCFGPIO,8,0
-19523: PCF: port#8: set to 0
-19535: ACT  : TaskValueSet,st_climate,4,0
-19542: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-19545: ACT  : event,EVAL_BOILER
-19558: EVENT: EVAL_BOILER
-19634: ACT  : event,BOILER_OFF
-19636: EVENT: BOILER_OFF
-19661: EVENT: Error: Nesting level exceeded!
-30595: EVENT: Clock#Time=Wed,19:32
-35152: DHT  : Temperature: 22.90
-35154: DHT  : Humidity: 47.0
-35171: EVENT: room#Temp=22.90
-35193: ACT  : let,90,1
-35198: ACT  : event,EVAL_CLIMATE
-35201: EVENT: EVAL_CLIMATE
-35334: ACT  : LogEntry,'AC -> OFF'
-35337: AC -> OFF
-35339: ACT  : PCFGPIO,7,0
-35343: PCF: port#7: set to 0
-35345: ACT  : TaskValueSet,st_climate,3,0
-35360: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-35371: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-35374: VALVE -> OPEN (AC OFF)
-35375: ACT  : Servo,1,19,85
-35459: Servo : GPIO 19 Servo set to 85
-35461: ACT  : TaskValueSet,st_aux,1,0
-35467: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-35507: ACT  : LogEntry,'LPUMP -> OFF'
-35509: LPUMP -> OFF
-35511: ACT  : GPIO,27,0
-35515: GPIO: port#27: set to 0
-35517: ACT  : TaskValueSet,st_climate,2,0
-35523: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-35635: ACT  : LogEntry,'VENT -> OFF'
-35638: VENT -> OFF
-35650: ACT  : PCFGPIO,8,0
-35654: PCF: port#8: set to 0
-35656: ACT  : TaskValueSet,st_climate,4,0
-35672: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-35675: ACT  : event,EVAL_BOILER
-35678: EVENT: EVAL_BOILER
-35753: ACT  : event,BOILER_OFF
-35756: EVENT: BOILER_OFF
-35780: EVENT: Error: Nesting level exceeded!
-35788: EVENT: room#Humi=47.0
-35809: ACT  : let,90,1
-35814: ACT  : event,EVAL_CLIMATE
-35816: EVENT: EVAL_CLIMATE
-35950: ACT  : LogEntry,'AC -> OFF'
-35952: AC -> OFF
-35954: ACT  : PCFGPIO,7,0
-35958: PCF: port#7: set to 0
-35960: ACT  : TaskValueSet,st_climate,3,0
-35966: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-35976: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-35989: VALVE -> OPEN (AC OFF)
-35991: ACT  : Servo,1,19,85
-36075: Servo : GPIO 19 Servo set to 85
-36077: ACT  : TaskValueSet,st_aux,1,0
-36082: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-36122: ACT  : LogEntry,'LPUMP -> OFF'
-36125: LPUMP -> OFF
-36127: ACT  : GPIO,27,0
-36130: GPIO: port#27: set to 0
-36142: ACT  : TaskValueSet,st_climate,2,0
-36148: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-36260: ACT  : LogEntry,'VENT -> OFF'
-36262: VENT -> OFF
-36264: ACT  : PCFGPIO,8,0
-36268: PCF: port#8: set to 0
-36270: ACT  : TaskValueSet,st_climate,4,0
-36286: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-36289: ACT  : event,EVAL_BOILER
-36292: EVENT: EVAL_BOILER
-36367: ACT  : event,BOILER_OFF
-36370: EVENT: BOILER_OFF
-36394: EVENT: Error: Nesting level exceeded!
-37102: WD   : Uptime 1  ConnectFailures 0 FreeMem 171500 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-37365: DS   : Temperature: 50.31 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-37381: EVENT: tank#Temp=50.31
-37405: ACT  : let,90,1
-37410: ACT  : event,EVAL_XTEN
-37413: EVENT: EVAL_XTEN
-37455: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-37458: XTEN -> ON (AUTO COLD)
-37460: ACT  : PCFGPIO,4,1
-37464: PCF: port#4: set to 1
-37477: ACT  : TaskValueSet,st_main,3,1
-37483: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-37497: ACT  : event,EVAL_BOILER
-37500: EVENT: EVAL_BOILER
-37574: ACT  : event,BOILER_OFF
-37577: EVENT: BOILER_OFF
-37611: ACT  : LogEntry,'BOILER -> OFF'
-37613: BOILER -> OFF
-37615: ACT  : PCFGPIO,3,0
-37619: PCF: port#3: set to 0
-37621: ACT  : TaskValueSet,st_climate,1,0
-37627: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-37640: ACT  : PCFGPIO,6,0
-37643: PCF: port#6: set to 0
-37646: ACT  : TaskValueSet,st_main,4,0
-37651: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-37669: ACT  : event,EVAL_CLIMATE
-37673: EVENT: EVAL_CLIMATE
-37808: ACT  : LogEntry,'AC -> OFF'
-37811: AC -> OFF
-37813: ACT  : PCFGPIO,7,0
-37817: PCF: port#7: set to 0
-37819: ACT  : TaskValueSet,st_climate,3,0
-37835: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-37845: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-37848: VALVE -> OPEN (AC OFF)
-37850: ACT  : Servo,1,19,85
-37934: Servo : GPIO 19 Servo set to 85
-37936: ACT  : TaskValueSet,st_aux,1,0
-37941: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-37982: ACT  : LogEntry,'LPUMP -> OFF'
-37985: LPUMP -> OFF
-37986: ACT  : GPIO,27,0
-37990: GPIO: port#27: set to 0
-38002: ACT  : TaskValueSet,st_climate,2,0
-38007: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-38119: ACT  : LogEntry,'VENT -> OFF'
-38122: VENT -> OFF
-38124: ACT  : PCFGPIO,8,0
-38128: PCF: port#8: set to 0
-38130: ACT  : TaskValueSet,st_climate,4,0
-38136: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-38149: ACT  : event,EVAL_BOILER
-38152: EVENT: EVAL_BOILER
-38227: ACT  : event,BOILER_OFF
-38230: EVENT: BOILER_OFF
-38254: EVENT: Error: Nesting level exceeded!
-38275: DS   : Temperature: 20.88 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-38300: DS   : Temperature: 6.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-38317: EVENT: floor#Temp=20.88
-38570: EVENT: out#Temp=6.00
-38594: ACT  : let,90,1
-38599: ACT  : event,EVAL_XTEN
-38601: EVENT: EVAL_XTEN
-38645: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
-38647: XTEN -> ON (AUTO COLD)
-38649: ACT  : PCFGPIO,4,1
-38653: PCF: port#4: set to 1
-38666: ACT  : TaskValueSet,st_main,3,1
-38671: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-38685: ACT  : event,EVAL_BOILER
-38688: EVENT: EVAL_BOILER
-38763: ACT  : event,BOILER_OFF
-38765: EVENT: BOILER_OFF
-38800: ACT  : LogEntry,'BOILER -> OFF'
-38802: BOILER -> OFF
-38804: ACT  : PCFGPIO,3,0
-38808: PCF: port#3: set to 0
-38820: ACT  : TaskValueSet,st_climate,1,0
-38826: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
-38829: ACT  : PCFGPIO,6,0
-38832: PCF: port#6: set to 0
-38845: ACT  : TaskValueSet,st_main,4,0
-38850: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-38858: ACT  : event,EVAL_CLIMATE
-38861: EVENT: EVAL_CLIMATE
-38993: ACT  : LogEntry,'AC -> OFF'
-38996: AC -> OFF
-38998: ACT  : PCFGPIO,7,0
-39003: PCF: port#7: set to 0
-39005: ACT  : TaskValueSet,st_climate,3,0
-39011: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-39021: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-39024: VALVE -> OPEN (AC OFF)
-39036: ACT  : Servo,1,19,85
-39120: Servo : GPIO 19 Servo set to 85
-39122: ACT  : TaskValueSet,st_aux,1,0
-39127: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-39167: ACT  : LogEntry,'LPUMP -> OFF'
-39170: LPUMP -> OFF
-39171: ACT  : GPIO,27,0
-39175: GPIO: port#27: set to 0
-39187: ACT  : TaskValueSet,st_climate,2,0
-39192: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-39304: ACT  : LogEntry,'VENT -> OFF'
-39307: VENT -> OFF
-39310: ACT  : PCFGPIO,8,0
-39314: PCF: port#8: set to 0
-39316: ACT  : TaskValueSet,st_climate,4,0
-39321: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-39335: ACT  : event,EVAL_BOILER
-39337: EVENT: EVAL_BOILER
-39412: ACT  : event,BOILER_OFF
-39415: EVENT: BOILER_OFF
-39439: EVENT: Error: Nesting level exceeded!
-65147: DHT  : Temperature: 23.00
-65148: DHT  : Humidity: 47.0
-65168: EVENT: room#Temp=23.00
-65189: ACT  : let,90,1
-65194: ACT  : event,EVAL_CLIMATE
-65197: EVENT: EVAL_CLIMATE
-65331: ACT  : LogEntry,'AC -> OFF'
-65333: AC -> OFF
-65335: ACT  : PCFGPIO,7,0
-65339: PCF: port#7: set to 0
-65352: ACT  : TaskValueSet,st_climate,3,0
-65357: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-65368: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-65370: VALVE -> OPEN (AC OFF)
-65372: ACT  : Servo,1,19,85
-65456: Servo : GPIO 19 Servo set to 85
-65459: ACT  : TaskValueSet,st_aux,1,0
-65464: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-65504: ACT  : LogEntry,'LPUMP -> OFF'
-65507: LPUMP -> OFF
-65519: ACT  : GPIO,27,0
-65522: GPIO: port#27: set to 0
-65525: ACT  : TaskValueSet,st_climate,2,0
-65531: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-65643: ACT  : LogEntry,'VENT -> OFF'
-65645: VENT -> OFF
-65647: ACT  : PCFGPIO,8,0
-65661: PCF: port#8: set to 0
-65664: ACT  : TaskValueSet,st_climate,4,0
-65670: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-65683: ACT  : event,EVAL_BOILER
-65685: EVENT: EVAL_BOILER
-65760: ACT  : event,BOILER_OFF
-65763: EVENT: BOILER_OFF
-65787: EVENT: Error: Nesting level exceeded!
-65795: EVENT: room#Humi=47.0
-65816: ACT  : let,90,1
-65821: ACT  : event,EVAL_CLIMATE
-65824: EVENT: EVAL_CLIMATE
-65961: ACT  : LogEntry,'AC -> OFF'
-65963: AC -> OFF
-65965: ACT  : PCFGPIO,7,0
-65969: PCF: port#7: set to 0
-65982: ACT  : TaskValueSet,st_climate,3,0
-65988: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-65999: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
-66002: VALVE -> OPEN (AC OFF)
-66004: ACT  : Servo,1,19,85
-66088: Servo : GPIO 19 Servo set to 85
-66090: ACT  : TaskValueSet,st_aux,1,0
-66095: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-66140: ACT  : LogEntry,'LPUMP -> OFF'
-66143: LPUMP -> OFF
-66155: ACT  : GPIO,27,0
-66158: GPIO: port#27: set to 0
-66160: ACT  : TaskValueSet,st_climate,2,0
-66176: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-66291: ACT  : LogEntry,'VENT -> OFF'
-66293: VENT -> OFF
-66295: ACT  : PCFGPIO,8,0
-66299: PCF: port#8: set to 0
-66312: ACT  : TaskValueSet,st_climate,4,0
-66318: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-66331: ACT  : event,EVAL_BOILER
-66334: EVENT: EVAL_BOILER
-66408: ACT  : event,BOILER_OFF
-66411: EVENT: BOILER_OFF
-66436: EVENT: Error: Nesting level exceeded!
+3787103: WD   : Uptime 63  ConnectFailures 0 FreeMem 171284 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+3788951:      : Rebooting...
+5309: PCF: port#6: set to 0
+5311: ACT  : PCFGPIO,7,0
+5316: PCF: port#7: set to 0
+5318: ACT  : PCFGPIO,8,0
+5322: PCF: port#8: set to 0
+5334: ACT  : GPIO,26,0
+5338: GPIO: port#26: set to 0
+5340: ACT  : GPIO,27,0
+5344: GPIO: port#27: set to 0
+5346: ACT  : Servo,1,19,85
+5431: Servo : GPIO 19 Servo set to 85
+5433: ACT  : TaskValueSet,st_main,1,1
+5518: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
+5531: ACT  : TaskValueSet,st_main,2,0
+5537: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
+5539: ACT  : TaskValueSet,st_main,3,0
+5555: taskValueSet: TaskValueSet,st_main,3,0  taskindex: 9 varNr: 2 result: 0.000000 type: 7
+5557: ACT  : TaskValueSet,st_main,4,0
+5564: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+5577: ACT  : TaskValueSet,st_climate,1,0
+5583: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+5595: ACT  : TaskValueSet,st_climate,2,0
+5601: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
+5614: ACT  : TaskValueSet,st_climate,3,0
+5619: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+5632: ACT  : TaskValueSet,st_climate,4,0
+5638: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+5640: ACT  : TaskValueSet,st_aux,1,0
+5657: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+5659: ACT  : TaskValueSet,st_aux,2,0
+5665: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
+5678: ACT  : let,40,2
+5683: ACT  : let,41,2
+5688: ACT  : let,42,2
+5693: ACT  : let,43,2
+5699: ACT  : TaskValueSet,st_mode,1,2
+5705: taskValueSet: TaskValueSet,st_mode,1,2  taskindex: 6 varNr: 0 result: 2.000000 type: 7
+5707: ACT  : TaskValueSet,st_mode,2,2
+5713: taskValueSet: TaskValueSet,st_mode,2,2  taskindex: 6 varNr: 1 result: 2.000000 type: 7
+5726: ACT  : TaskValueSet,st_mode,3,2
+5732: taskValueSet: TaskValueSet,st_mode,3,2  taskindex: 6 varNr: 2 result: 2.000000 type: 7
+5745: ACT  : TaskValueSet,st_mode,4,2
+5751: taskValueSet: TaskValueSet,st_mode,4,2  taskindex: 6 varNr: 3 result: 2.000000 type: 7
+5753: ACT  : let,50,0
+5759: ACT  : let,51,0
+5765: ACT  : let,52,0
+5770: ACT  : let,53,0
+5775: ACT  : let,54,0
+5780: ACT  : let,55,0
+5785: ACT  : let,56,0
+5791: ACT  : let,61,0
+5796: ACT  : let,62,0
+5801: ACT  : let,63,0
+5806: ACT  : let,64,0
+5811: ACT  : let,65,0
+5816: ACT  : let,66,0
+5821: ACT  : let,67,0
+5826: ACT  : let,68,0
+5831: ACT  : let,90,0
+5836: ACT  : let,91,0
+5845: WIFI : Connected! AP: Home (64:D1:54:3D:2F:76) Ch: 1 Duration: 746 ms
+5846: WIFI : Arduino wifi status: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. 
+5869: WIFI : Static IP: 192.168.1.236 (ESP32-1-Easy-4) GW: 192.168.1.0 SN: 255.255.255.0 DNS: 192.168.1.1 / 0.0.0.0   duration: 2354 
+5870: Skip saving SecuritySettings, not changed
+5901: UDP : Start listening on port 8266
+5903: firstLoopConnectionsEstablished
+5908: Internal command: All checked OK
+5913: EVENT: TaskInit#st_mode=7,1
+6061: Webserver: stop
+6084: NTP  : NTP replied: delay 15 ms round-trip delay: 17 ms offset: 20530T18:34:42.464,^  t0: 1773858244.668,^  t1: 6.063,^  t2: 17
+6097: Time set to 1773858888.547
+6108: Current Time Zone:  DST time start: 2026-03-29 02:00:00 offset: 180 min STD time start: 2026-10-25 01:00:00 offset: 120 min
+6110: Local time: 2026-03-18 20:34:48
+6118: Webserver: start
+6124: Dummy: value 1: 2
+6126: Dummy: value 2: 2
+6137: Dummy: value 3: 2
+6138: Dummy: value 4: 2
+6149: Dummy: value 1: 0
+6151: Dummy: value 2: 0
+6157: Dummy: value 1: 0
+6158: Dummy: value 2: 0
+6159: Dummy: value 3: 0
+6171: Dummy: value 4: 0
+6182: Dummy: value 1: 1
+6184: Dummy: value 2: 0
+6185: Dummy: value 3: 0
+6196: Dummy: value 4: 0
+6459: SW   : State 0
+6466: SW   : State 1
+6471: SW   : State 1
+6501: DHT  : Temperature: 22.40
+6503: DHT  : Humidity: 46.0
+6534: EVENT: TaskInit#st_aux=8,1
+6663: EVENT: TaskInit#st_climate=9,1
+6797: GPIO  : Port=33 State=1 Output value=1
+6801: GPIO  : Port=34 State=1 Output value=0
+6813: MQTT : Start background connect for controller 2
+6815: MQTT : Connecting to: 192.168.1.23:1883
+6826: MQTT : Intentional reconnect
+6844: EVENT: TaskInit#st_main=10,1
+6980: EVENT: Clock#Time=Wed,20:34
+7125: EVENT: TaskInit#OLED=12,1
+7261: MQTT : Connected to broker with client ID: ESP32_1_Easy_4_4
+7269: MQTT : Subscribed to: cat_home/ESP32_1_Easy_4/cmd/#
+7271: MQTT : Background Connect request Ready
+7277: MQTT : Background Connect request success, took 48 msec
+7392: EVENT: TaskInit#tank=13,1
+7526: EVENT: TaskInit#floor=14,1
+7663: WD   : Uptime 0  ConnectFailures 0 FreeMem 160080 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+7692: DS   : Temperature: 37.69 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+7716: DS   : Temperature: 23.56 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+7735: DS   : Temperature: Error! (28-ba-51-95-f0-01-3c-ba [DS18B20])
+7754: static_file: /esp.css to: 192.168.1.1
+7825: EVENT: TaskInit#dvig=15,1
+7971: EVENT: TaskInit#leak=16,1
+8098: EVENT: TaskInit#pwr=17,1
+8242: EVENT: TaskInit#room=18,1
+8385: EVENT: TaskInit#out=19,1
+8530: EVENT: WiFi#ChangedAccesspoint
+8855: EVENT: WiFi#ChangedWiFichannel
+8982: EVENT: WiFi#Connected
+9135: EVENT: p2pNode#Connected=4,'ESP32_1_Easy','20260121'
+9267: EVENT: Time#Initialized
+9308: ACT  : event,EVAL_DHW
+9311: EVENT: EVAL_DHW
+9383: ACT  : LogEntry,'DHW -> OFF (NO WINDOW)'
+9386: DHW -> OFF (NO WINDOW)
+9388: ACT  : PCFGPIO,5,0
+9392: PCF: port#5: set to 0
+9404: ACT  : TaskValueSet,st_main,2,0
+9410: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
+9426: ACT  : event,EVAL_BOILER
+9428: EVENT: EVAL_BOILER
+9527: ACT  : event,BOILER_OFF
+9530: EVENT: BOILER_OFF
+9569: ACT  : LogEntry,'BOILER -> OFF'
+9571: BOILER -> OFF
+9573: ACT  : PCFGPIO,3,0
+9577: PCF: port#3: set to 0
+9590: ACT  : TaskValueSet,st_climate,1,0
+9595: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+9598: ACT  : PCFGPIO,6,0
+9612: PCF: port#6: set to 0
+9614: ACT  : TaskValueSet,st_main,4,0
+9620: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+9628: ACT  : event,EVAL_CLIMATE
+9631: EVENT: EVAL_CLIMATE
+9775: ACT  : LogEntry,'AC -> OFF'
+9777: AC -> OFF
+9779: ACT  : PCFGPIO,7,0
+9783: PCF: port#7: set to 0
+9786: ACT  : TaskValueSet,st_climate,3,0
+9791: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+9802: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+9815: VALVE -> OPEN (AC OFF)
+9817: ACT  : Servo,1,19,85
+9901: Servo : GPIO 19 Servo set to 85
+9903: ACT  : TaskValueSet,st_aux,1,0
+9908: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+9948: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+9951: LPUMP -> ON (HEAT DEMAND)
+9953: ACT  : GPIO,27,1
+9957: GPIO: port#27: set to 1
+9959: ACT  : TaskValueSet,st_climate,2,1
+9968: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+10093: ACT  : LogEntry,'VENT -> OFF'
+10096: VENT -> OFF
+10108: ACT  : PCFGPIO,8,0
+10112: PCF: port#8: set to 0
+10114: ACT  : TaskValueSet,st_climate,4,0
+10120: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+10126: ACT  : event,EVAL_UF
+10129: EVENT: EVAL_UF
+10267: ACT  : LogEntry,'UF -> OFF'
+10270: UF -> OFF
+10272: ACT  : GPIO,26,0
+10276: GPIO: port#26: set to 0
+10278: ACT  : TaskValueSet,st_aux,2,0
+10283: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
+10291: EVENT: st_mode#dhwmode=2
+10519: EVENT: st_mode#ventmode=2
+10661: EVENT: st_mode#ufmode=2
+10784: EVENT: st_mode#xtenmode=2
+10914: EVENT: st_aux#valve=0
+11034: EVENT: st_aux#uf=0
+11164: EVENT: st_climate#bpump=0
+11286: EVENT: st_climate#lpump=0
+11418: EVENT: st_climate#ac=0
+11534: EVENT: st_climate#vent=0
+11653: EVENT: st_main#water=1
+13440: ACT  : event,EVAL_DHW
+13442: EVENT: EVAL_DHW
+13491: ACT  : LogEntry,'DHW -> OFF (NO WINDOW)'
+13494: DHW -> OFF (NO WINDOW)
+13496: ACT  : PCFGPIO,5,0
+13500: PCF: port#5: set to 0
+13512: ACT  : TaskValueSet,st_main,2,0
+13518: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
+13533: ACT  : event,EVAL_XTEN
+13536: EVENT: EVAL_XTEN
+13583: ACT  : LogEntry,'XTEN -> OFF (AUTO/WARM)'
+13586: XTEN -> OFF (AUTO/WARM)
+13588: ACT  : PCFGPIO,4,0
+13592: PCF: port#4: set to 0
+13594: ACT  : TaskValueSet,st_main,3,0
+13609: taskValueSet: TaskValueSet,st_main,3,0  taskindex: 9 varNr: 2 result: 0.000000 type: 7
+13621: ACT  : event,EVAL_BOILER
+13623: EVENT: EVAL_BOILER
+13697: ACT  : event,BOILER_OFF
+13700: EVENT: BOILER_OFF
+13737: ACT  : LogEntry,'BOILER -> OFF'
+13739: BOILER -> OFF
+13741: ACT  : PCFGPIO,3,0
+13746: PCF: port#3: set to 0
+13748: ACT  : TaskValueSet,st_climate,1,0
+13754: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+13768: ACT  : PCFGPIO,6,0
+13772: PCF: port#6: set to 0
+13774: ACT  : TaskValueSet,st_main,4,0
+13780: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+13787: ACT  : event,EVAL_CLIMATE
+13800: EVENT: EVAL_CLIMATE
+13943: ACT  : LogEntry,'AC -> OFF'
+13946: AC -> OFF
+13948: ACT  : PCFGPIO,7,0
+13952: PCF: port#7: set to 0
+13955: ACT  : TaskValueSet,st_climate,3,0
+13961: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+13972: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+13974: VALVE -> OPEN (AC OFF)
+13976: ACT  : Servo,1,19,85
+14060: Servo : GPIO 19 Servo set to 85
+14063: ACT  : TaskValueSet,st_aux,1,0
+14078: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+14118: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+14121: LPUMP -> ON (HEAT DEMAND)
+14123: ACT  : GPIO,27,1
+14126: GPIO: port#27: set to 1
+14139: ACT  : TaskValueSet,st_climate,2,1
+14145: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+14268: ACT  : LogEntry,'VENT -> OFF'
+14271: VENT -> OFF
+14273: ACT  : PCFGPIO,8,0
+14277: PCF: port#8: set to 0
+14279: ACT  : TaskValueSet,st_climate,4,0
+14285: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+14303: ACT  : event,EVAL_UF
+14306: EVENT: EVAL_UF
+14444: ACT  : LogEntry,'UF -> OFF'
+14446: UF -> OFF
+14448: ACT  : GPIO,26,0
+14452: GPIO: port#26: set to 0
+14454: ACT  : TaskValueSet,st_aux,2,0
+14459: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
+14472: EVENT: room#Temp=22.40
+14495: ACT  : let,90,1
+14500: ACT  : event,EVAL_CLIMATE
+14503: EVENT: EVAL_CLIMATE
+14646: ACT  : LogEntry,'AC -> OFF'
+14648: AC -> OFF
+14650: ACT  : PCFGPIO,7,0
+14654: PCF: port#7: set to 0
+14656: ACT  : TaskValueSet,st_climate,3,0
+14662: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+14674: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+14687: VALVE -> OPEN (AC OFF)
+14689: ACT  : Servo,1,19,85
+14773: Servo : GPIO 19 Servo set to 85
+14776: ACT  : TaskValueSet,st_aux,1,0
+14782: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+14821: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+14824: LPUMP -> ON (HEAT DEMAND)
+14826: ACT  : GPIO,27,1
+14829: GPIO: port#27: set to 1
+14842: ACT  : TaskValueSet,st_climate,2,1
+14848: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+14972: ACT  : LogEntry,'VENT -> OFF'
+14975: VENT -> OFF
+14977: ACT  : PCFGPIO,8,0
+14982: PCF: port#8: set to 0
+14984: ACT  : TaskValueSet,st_climate,4,0
+14990: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+14998: EVENT: room#Humi=46.0
+15022: ACT  : let,90,1
+15027: ACT  : event,EVAL_CLIMATE
+15029: EVENT: EVAL_CLIMATE
+15172: ACT  : LogEntry,'AC -> OFF'
+15174: AC -> OFF
+15176: ACT  : PCFGPIO,7,0
+15181: PCF: port#7: set to 0
+15183: ACT  : TaskValueSet,st_climate,3,0
+15189: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+15200: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+15203: VALVE -> OPEN (AC OFF)
+15215: ACT  : Servo,1,19,85
+15299: Servo : GPIO 19 Servo set to 85
+15302: ACT  : TaskValueSet,st_aux,1,0
+15307: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+15347: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+15349: LPUMP -> ON (HEAT DEMAND)
+15361: ACT  : GPIO,27,1
+15365: GPIO: port#27: set to 1
+15367: ACT  : TaskValueSet,st_climate,2,1
+15383: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+15508: ACT  : LogEntry,'VENT -> OFF'
+15510: VENT -> OFF
+15512: ACT  : PCFGPIO,8,0
+15516: PCF: port#8: set to 0
+15529: ACT  : TaskValueSet,st_climate,4,0
+15535: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+15897: ACT  : PCFGPIO,2,0
+15902: PCF: port#2: set to 0
+15905: ACT  : TaskValueSet,st_main,1,1
+15911: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
+15923: ACT  : event,EVAL_DHW
+15926: EVENT: EVAL_DHW
+15975: ACT  : LogEntry,'DHW -> OFF (NO WINDOW)'
+15978: DHW -> OFF (NO WINDOW)
+15979: ACT  : PCFGPIO,5,0
+15983: PCF: port#5: set to 0
+15996: ACT  : TaskValueSet,st_main,2,0
+16002: taskValueSet: TaskValueSet,st_main,2,0  taskindex: 9 varNr: 1 result: 0.000000 type: 7
+16017: ACT  : event,EVAL_XTEN
+16019: EVENT: EVAL_XTEN
+16067: ACT  : LogEntry,'XTEN -> OFF (AUTO/WARM)'
+16070: XTEN -> OFF (AUTO/WARM)
+16071: ACT  : PCFGPIO,4,0
+16075: PCF: port#4: set to 0
+16078: ACT  : TaskValueSet,st_main,3,0
+16083: taskValueSet: TaskValueSet,st_main,3,0  taskindex: 9 varNr: 2 result: 0.000000 type: 7
+16104: ACT  : event,EVAL_BOILER
+16107: EVENT: EVAL_BOILER
+16181: ACT  : event,BOILER_OFF
+16183: EVENT: BOILER_OFF
+16220: ACT  : LogEntry,'BOILER -> OFF'
+16223: BOILER -> OFF
+16225: ACT  : PCFGPIO,3,0
+16229: PCF: port#3: set to 0
+16241: ACT  : TaskValueSet,st_climate,1,0
+16246: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+16249: ACT  : PCFGPIO,6,0
+16263: PCF: port#6: set to 0
+16266: ACT  : TaskValueSet,st_main,4,0
+16271: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+16279: ACT  : event,EVAL_CLIMATE
+16282: EVENT: EVAL_CLIMATE
+16427: ACT  : LogEntry,'AC -> OFF'
+16429: AC -> OFF
+16431: ACT  : PCFGPIO,7,0
+16435: PCF: port#7: set to 0
+16437: ACT  : TaskValueSet,st_climate,3,0
+16453: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+16464: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+16467: VALVE -> OPEN (AC OFF)
+16469: ACT  : Servo,1,19,85
+16553: Servo : GPIO 19 Servo set to 85
+16555: ACT  : TaskValueSet,st_aux,1,0
+16570: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+16610: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+16613: LPUMP -> ON (HEAT DEMAND)
+16615: ACT  : GPIO,27,1
+16620: GPIO: port#27: set to 1
+16633: ACT  : TaskValueSet,st_climate,2,1
+16639: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+16762: ACT  : LogEntry,'VENT -> OFF'
+16765: VENT -> OFF
+16767: ACT  : PCFGPIO,8,0
+16771: PCF: port#8: set to 0
+16773: ACT  : TaskValueSet,st_climate,4,0
+16789: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+16797: ACT  : event,EVAL_UF
+16799: EVENT: EVAL_UF
+16939: ACT  : LogEntry,'UF -> OFF'
+16942: UF -> OFF
+16943: ACT  : GPIO,26,0
+16947: GPIO: port#26: set to 0
+16949: ACT  : TaskValueSet,st_aux,2,0
+16964: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
+16973: EVENT: MQTT#Connected
+17092: EVENT: tank#Temp=37.69
+17118: ACT  : let,90,1
+17124: ACT  : event,EVAL_XTEN
+17126: EVENT: EVAL_XTEN
+17174: ACT  : LogEntry,'XTEN -> OFF (AUTO/WARM)'
+17177: XTEN -> OFF (AUTO/WARM)
+17178: ACT  : PCFGPIO,4,0
+17182: PCF: port#4: set to 0
+17195: ACT  : TaskValueSet,st_main,3,0
+17200: taskValueSet: TaskValueSet,st_main,3,0  taskindex: 9 varNr: 2 result: 0.000000 type: 7
+17212: ACT  : event,EVAL_BOILER
+17215: EVENT: EVAL_BOILER
+17288: ACT  : event,BOILER_OFF
+17291: EVENT: BOILER_OFF
+17327: ACT  : LogEntry,'BOILER -> OFF'
+17330: BOILER -> OFF
+17332: ACT  : PCFGPIO,3,0
+17337: PCF: port#3: set to 0
+17340: ACT  : TaskValueSet,st_climate,1,0
+17345: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+17358: ACT  : PCFGPIO,6,0
+17362: PCF: port#6: set to 0
+17364: ACT  : TaskValueSet,st_main,4,0
+17370: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+17378: ACT  : event,EVAL_CLIMATE
+17381: EVENT: EVAL_CLIMATE
+17520: ACT  : LogEntry,'AC -> OFF'
+17523: AC -> OFF
+17524: ACT  : PCFGPIO,7,0
+17528: PCF: port#7: set to 0
+17531: ACT  : TaskValueSet,st_climate,3,0
+17537: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+17548: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+17551: VALVE -> OPEN (AC OFF)
+17563: ACT  : Servo,1,19,85
+17647: Servo : GPIO 19 Servo set to 85
+17650: ACT  : TaskValueSet,st_aux,1,0
+17655: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+17694: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+17697: LPUMP -> ON (HEAT DEMAND)
+17699: ACT  : GPIO,27,1
+17712: GPIO: port#27: set to 1
+17715: ACT  : TaskValueSet,st_climate,2,1
+17721: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+17844: ACT  : LogEntry,'VENT -> OFF'
+17847: VENT -> OFF
+17849: ACT  : PCFGPIO,8,0
+17853: PCF: port#8: set to 0
+17855: ACT  : TaskValueSet,st_climate,4,0
+17861: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+17869: EVENT: floor#Temp=23.56
+18168: EVENT: Clock#Time=Wed,20:35
+35203: DHT  : Temperature: 22.40
+35204: DHT  : Humidity: 46.0
+35223: EVENT: room#Temp=22.40
+35245: ACT  : let,90,1
+35250: ACT  : event,EVAL_CLIMATE
+35253: EVENT: EVAL_CLIMATE
+35393: ACT  : LogEntry,'AC -> OFF'
+35395: AC -> OFF
+35397: ACT  : PCFGPIO,7,0
+35401: PCF: port#7: set to 0
+35403: ACT  : TaskValueSet,st_climate,3,0
+35409: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+35420: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+35432: VALVE -> OPEN (AC OFF)
+35434: ACT  : Servo,1,19,85
+35518: Servo : GPIO 19 Servo set to 85
+35521: ACT  : TaskValueSet,st_aux,1,0
+35526: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+35566: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+35569: LPUMP -> ON (HEAT DEMAND)
+35571: ACT  : GPIO,27,1
+35584: GPIO: port#27: set to 1
+35586: ACT  : TaskValueSet,st_climate,2,1
+35592: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+35716: ACT  : LogEntry,'VENT -> OFF'
+35719: VENT -> OFF
+35721: ACT  : PCFGPIO,8,0
+35725: PCF: port#8: set to 0
+35727: ACT  : TaskValueSet,st_climate,4,0
+35733: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+35749: EVENT: room#Humi=46.0
+35772: ACT  : let,90,1
+35777: ACT  : event,EVAL_CLIMATE
+35780: EVENT: EVAL_CLIMATE
+35921: ACT  : LogEntry,'AC -> OFF'
+35924: AC -> OFF
+35925: ACT  : PCFGPIO,7,0
+35930: PCF: port#7: set to 0
+35932: ACT  : TaskValueSet,st_climate,3,0
+35937: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+35948: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+35951: VALVE -> OPEN (AC OFF)
+35963: ACT  : Servo,1,19,85
+36047: Servo : GPIO 19 Servo set to 85
+36049: ACT  : TaskValueSet,st_aux,1,0
+36055: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+36095: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+36098: LPUMP -> ON (HEAT DEMAND)
+36100: ACT  : GPIO,27,1
+36103: GPIO: port#27: set to 1
+36116: ACT  : TaskValueSet,st_climate,2,1
+36122: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+36247: ACT  : LogEntry,'VENT -> OFF'
+36249: VENT -> OFF
+36251: ACT  : PCFGPIO,8,0
+36255: PCF: port#8: set to 0
+36258: ACT  : TaskValueSet,st_climate,4,0
+36274: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+37187: WD   : Uptime 1  ConnectFailures 0 FreeMem 171784 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+37324: DS   : Temperature: 37.06 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+37340: EVENT: tank#Temp=37.06
+37365: ACT  : let,90,1
+37370: ACT  : event,EVAL_XTEN
+37373: EVENT: EVAL_XTEN
+37419: ACT  : LogEntry,'XTEN -> OFF (AUTO/WARM)'
+37422: XTEN -> OFF (AUTO/WARM)
+37423: ACT  : PCFGPIO,4,0
+37428: PCF: port#4: set to 0
+37440: ACT  : TaskValueSet,st_main,3,0
+37445: taskValueSet: TaskValueSet,st_main,3,0  taskindex: 9 varNr: 2 result: 0.000000 type: 7
+37457: ACT  : event,EVAL_BOILER
+37459: EVENT: EVAL_BOILER
+37536: ACT  : event,BOILER_OFF
+37539: EVENT: BOILER_OFF
+37575: ACT  : LogEntry,'BOILER -> OFF'
+37577: BOILER -> OFF
+37579: ACT  : PCFGPIO,3,0
+37583: PCF: port#3: set to 0
+37585: ACT  : TaskValueSet,st_climate,1,0
+37601: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+37604: ACT  : PCFGPIO,6,0
+37608: PCF: port#6: set to 0
+37611: ACT  : TaskValueSet,st_main,4,0
+37617: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+37626: ACT  : event,EVAL_CLIMATE
+37628: EVENT: EVAL_CLIMATE
+37768: ACT  : LogEntry,'AC -> OFF'
+37770: AC -> OFF
+37772: ACT  : PCFGPIO,7,0
+37776: PCF: port#7: set to 0
+37778: ACT  : TaskValueSet,st_climate,3,0
+37784: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+37795: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+37807: VALVE -> OPEN (AC OFF)
+37810: ACT  : Servo,1,19,85
+37894: Servo : GPIO 19 Servo set to 85
+37896: ACT  : TaskValueSet,st_aux,1,0
+37901: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+37943: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+37945: LPUMP -> ON (HEAT DEMAND)
+37947: ACT  : GPIO,27,1
+37951: GPIO: port#27: set to 1
+37963: ACT  : TaskValueSet,st_climate,2,1
+37969: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+38091: ACT  : LogEntry,'VENT -> OFF'
+38094: VENT -> OFF
+38096: ACT  : PCFGPIO,8,0
+38100: PCF: port#8: set to 0
+38102: ACT  : TaskValueSet,st_climate,4,0
+38118: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+38139: DS   : Temperature: 23.69 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+38155: EVENT: floor#Temp=23.69
+38287: DS   : Temperature: 5.69 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+38404: EVENT: out#Temp=5.69
+38430: ACT  : let,90,1
+38435: ACT  : event,EVAL_XTEN
+38437: EVENT: EVAL_XTEN
+38483: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
+38485: XTEN -> ON (AUTO COLD)
+38487: ACT  : PCFGPIO,4,1
+38491: PCF: port#4: set to 1
+38504: ACT  : TaskValueSet,st_main,3,1
+38510: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
+38524: ACT  : event,EVAL_BOILER
+38527: EVENT: EVAL_BOILER
+38604: ACT  : event,BOILER_OFF
+38607: EVENT: BOILER_OFF
+38643: ACT  : LogEntry,'BOILER -> OFF'
+38646: BOILER -> OFF
+38648: ACT  : PCFGPIO,3,0
+38652: PCF: port#3: set to 0
+38654: ACT  : TaskValueSet,st_climate,1,0
+38669: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+38672: ACT  : PCFGPIO,6,0
+38676: PCF: port#6: set to 0
+38678: ACT  : TaskValueSet,st_main,4,0
+38684: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+38702: ACT  : event,EVAL_CLIMATE
+38705: EVENT: EVAL_CLIMATE
+38846: ACT  : LogEntry,'AC -> OFF'
+38848: AC -> OFF
+38850: ACT  : PCFGPIO,7,0
+38854: PCF: port#7: set to 0
+38857: ACT  : TaskValueSet,st_climate,3,0
+38862: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+38873: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+38886: VALVE -> OPEN (AC OFF)
+38888: ACT  : Servo,1,19,85
+38972: Servo : GPIO 19 Servo set to 85
+38974: ACT  : TaskValueSet,st_aux,1,0
+38979: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+39020: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+39022: LPUMP -> ON (HEAT DEMAND)
+39024: ACT  : GPIO,27,1
+39038: GPIO: port#27: set to 1
+39040: ACT  : TaskValueSet,st_climate,2,1
+39047: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+39170: ACT  : LogEntry,'VENT -> OFF'
+39173: VENT -> OFF
+39174: ACT  : PCFGPIO,8,0
+39179: PCF: port#8: set to 0
+39181: ACT  : TaskValueSet,st_climate,4,0
+39197: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+65205: DHT  : Temperature: 22.50
+65206: DHT  : Humidity: 46.0
+65225: EVENT: room#Temp=22.50
+65247: ACT  : let,90,1
+65253: ACT  : event,EVAL_CLIMATE
+65255: EVENT: EVAL_CLIMATE
+65395: ACT  : LogEntry,'AC -> OFF'
+65398: AC -> OFF
+65400: ACT  : PCFGPIO,7,0
+65404: PCF: port#7: set to 0
+65417: ACT  : TaskValueSet,st_climate,3,0
+65422: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+65433: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+65436: VALVE -> OPEN (AC OFF)
+65438: ACT  : Servo,1,19,85
+65522: Servo : GPIO 19 Servo set to 85
+65524: ACT  : TaskValueSet,st_aux,1,0
+65529: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+65573: ACT  : LogEntry,'LPUMP -> OFF'
+65576: LPUMP -> OFF
+65588: ACT  : GPIO,27,0
+65591: GPIO: port#27: set to 0
+65593: ACT  : TaskValueSet,st_climate,2,0
+65599: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
+65719: ACT  : LogEntry,'VENT -> OFF'
+65721: VENT -> OFF
+65723: ACT  : PCFGPIO,8,0
+65738: PCF: port#8: set to 0
+65740: ACT  : TaskValueSet,st_climate,4,0
+65746: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+65754: EVENT: room#Humi=46.0
+65776: ACT  : let,90,1
+65781: ACT  : event,EVAL_CLIMATE
+65784: EVENT: EVAL_CLIMATE
+65926: ACT  : LogEntry,'AC -> OFF'
+65928: AC -> OFF
+65930: ACT  : PCFGPIO,7,0
+65934: PCF: port#7: set to 0
+65947: ACT  : TaskValueSet,st_climate,3,0
+65952: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+65963: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+65966: VALVE -> OPEN (AC OFF)
+65968: ACT  : Servo,1,19,85
+66052: Servo : GPIO 19 Servo set to 85
+66054: ACT  : TaskValueSet,st_aux,1,0
+66060: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+66104: ACT  : LogEntry,'LPUMP -> OFF'
+66106: LPUMP -> OFF
+66119: ACT  : GPIO,27,0
+66122: GPIO: port#27: set to 0
+66124: ACT  : TaskValueSet,st_climate,2,0
+66130: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
+66249: ACT  : LogEntry,'VENT -> OFF'
+66252: VENT -> OFF
+66254: ACT  : PCFGPIO,8,0
+66268: PCF: port#8: set to 0
+66270: ACT  : TaskValueSet,st_climate,4,0
+66276: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+67186: WD   : Uptime 1  ConnectFailures 0 FreeMem 171812 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+67344: DS   : Temperature: 36.44 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+67360: EVENT: tank#Temp=36.44
+67385: ACT  : let,90,1
+67390: ACT  : event,EVAL_XTEN
+67393: EVENT: EVAL_XTEN
+67437: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
+67440: XTEN -> ON (AUTO COLD)
+67442: ACT  : PCFGPIO,4,1
+67446: PCF: port#4: set to 1
+67458: ACT  : TaskValueSet,st_main,3,1
+67464: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
+67478: ACT  : event,EVAL_BOILER
+67481: EVENT: EVAL_BOILER
+67561: ACT  : event,BOILER_OFF
+67564: EVENT: BOILER_OFF
+67600: ACT  : LogEntry,'BOILER -> OFF'
+67602: BOILER -> OFF
+67604: ACT  : PCFGPIO,3,0
+67609: PCF: port#3: set to 0
+67621: ACT  : TaskValueSet,st_climate,1,0
+67627: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+67640: ACT  : PCFGPIO,6,0
+67644: PCF: port#6: set to 0
+67646: ACT  : TaskValueSet,st_main,4,0
+67652: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+67660: ACT  : event,EVAL_CLIMATE
+67673: EVENT: EVAL_CLIMATE
+67814: ACT  : LogEntry,'AC -> OFF'
+67816: AC -> OFF
+67819: ACT  : PCFGPIO,7,0
+67824: PCF: port#7: set to 0
+67836: ACT  : TaskValueSet,st_climate,3,0
+67842: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+67852: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+67855: VALVE -> OPEN (AC OFF)
+67857: ACT  : Servo,1,19,85
+67941: Servo : GPIO 19 Servo set to 85
+67943: ACT  : TaskValueSet,st_aux,1,0
+67949: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+67991: ACT  : LogEntry,'LPUMP -> OFF'
+67994: LPUMP -> OFF
+68006: ACT  : GPIO,27,0
+68010: GPIO: port#27: set to 0
+68012: ACT  : TaskValueSet,st_climate,2,0
+68028: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
+68147: ACT  : LogEntry,'VENT -> OFF'
+68150: VENT -> OFF
+68152: ACT  : PCFGPIO,8,0
+68156: PCF: port#8: set to 0
+68169: ACT  : TaskValueSet,st_climate,4,0
+68175: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+68196: DS   : Temperature: 23.75 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+68221: DS   : Temperature: 5.69 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+68239: EVENT: floor#Temp=23.75
+68477: EVENT: out#Temp=5.69
+68502: ACT  : let,90,1
+68507: ACT  : event,EVAL_XTEN
+68510: EVENT: EVAL_XTEN
+68555: ACT  : LogEntry,'XTEN -> ON (AUTO COLD)'
+68558: XTEN -> ON (AUTO COLD)
+68560: ACT  : PCFGPIO,4,1
+68564: PCF: port#4: set to 1
+68577: ACT  : TaskValueSet,st_main,3,1
+68583: taskValueSet: TaskValueSet,st_main,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
+68597: ACT  : event,EVAL_BOILER
+68600: EVENT: EVAL_BOILER
+68677: ACT  : event,BOILER_OFF
+68680: EVENT: BOILER_OFF
+68715: ACT  : LogEntry,'BOILER -> OFF'
+68718: BOILER -> OFF
+68720: ACT  : PCFGPIO,3,0
+68724: PCF: port#3: set to 0
+68726: ACT  : TaskValueSet,st_climate,1,0
+68742: taskValueSet: TaskValueSet,st_climate,1,0  taskindex: 8 varNr: 0 result: 0.000000 type: 7
+68745: ACT  : PCFGPIO,6,0
+68749: PCF: port#6: set to 0
+68761: ACT  : TaskValueSet,st_main,4,0
+68767: taskValueSet: TaskValueSet,st_main,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
+68775: ACT  : event,EVAL_CLIMATE
+68778: EVENT: EVAL_CLIMATE
+68920: ACT  : LogEntry,'AC -> OFF'
+68922: AC -> OFF
+68924: ACT  : PCFGPIO,7,0
+68928: PCF: port#7: set to 0
+68941: ACT  : TaskValueSet,st_climate,3,0
+68947: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+68958: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+68961: VALVE -> OPEN (AC OFF)
+68963: ACT  : Servo,1,19,85
+69047: Servo : GPIO 19 Servo set to 85
+69050: ACT  : TaskValueSet,st_aux,1,0
+69056: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+69098: ACT  : LogEntry,'LPUMP -> OFF'
+69101: LPUMP -> OFF
+69103: ACT  : GPIO,27,0
+69117: GPIO: port#27: set to 0
+69119: ACT  : TaskValueSet,st_climate,2,0
+69125: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
+69245: ACT  : LogEntry,'VENT -> OFF'
+69248: VENT -> OFF
+69250: ACT  : PCFGPIO,8,0
+69256: PCF: port#8: set to 0
+69258: ACT  : TaskValueSet,st_climate,4,0
+69264: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+77725: EVENT: Clock#Time=Wed,20:36
+95207: DHT  : Temperature: 22.40
+95208: DHT  : Humidity: 46.0
+95228: EVENT: room#Temp=22.40
+95250: ACT  : let,90,1
+95255: ACT  : event,EVAL_CLIMATE
+95258: EVENT: EVAL_CLIMATE
+95398: ACT  : LogEntry,'AC -> OFF'
+95401: AC -> OFF
+95403: ACT  : PCFGPIO,7,0
+95407: PCF: port#7: set to 0
+95419: ACT  : TaskValueSet,st_climate,3,0
+95425: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+95436: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+95439: VALVE -> OPEN (AC OFF)
+95441: ACT  : Servo,1,19,85
+95525: Servo : GPIO 19 Servo set to 85
+95527: ACT  : TaskValueSet,st_aux,1,0
+95532: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+95574: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+95587: LPUMP -> ON (HEAT DEMAND)
+95589: ACT  : GPIO,27,1
+95592: GPIO: port#27: set to 1
+95594: ACT  : TaskValueSet,st_climate,2,1
+95600: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+95723: ACT  : LogEntry,'VENT -> OFF'
+95726: VENT -> OFF
+95738: ACT  : PCFGPIO,8,0
+95742: PCF: port#8: set to 0
+95744: ACT  : TaskValueSet,st_climate,4,0
+95750: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+95758: EVENT: room#Humi=46.0
+95781: ACT  : let,90,1
+95786: ACT  : event,EVAL_CLIMATE
+95788: EVENT: EVAL_CLIMATE
+95929: ACT  : LogEntry,'AC -> OFF'
+95931: AC -> OFF
+95933: ACT  : PCFGPIO,7,0
+95937: PCF: port#7: set to 0
+95950: ACT  : TaskValueSet,st_climate,3,0
+95955: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+95966: ACT  : LogEntry,'VALVE -> OPEN (AC OFF)'
+95969: VALVE -> OPEN (AC OFF)
+95972: ACT  : Servo,1,19,85
+96056: Servo : GPIO 19 Servo set to 85
+96058: ACT  : TaskValueSet,st_aux,1,0
+96065: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+96107: ACT  : LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+96110: LPUMP -> ON (HEAT DEMAND)
+96122: ACT  : GPIO,27,1
+96125: GPIO: port#27: set to 1
+96128: ACT  : TaskValueSet,st_climate,2,1
+96134: taskValueSet: TaskValueSet,st_climate,2,1  taskindex: 8 varNr: 1 result: 1.000000 type: 7
+96259: ACT  : LogEntry,'VENT -> OFF'
+96261: VENT -> OFF
+96263: ACT  : PCFGPIO,8,0
+96267: PCF: port#8: set to 0
+96280: ACT  : TaskValueSet,st_climate,4,0
+96286: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
