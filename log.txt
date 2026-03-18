@@ -1,494 +1,350 @@
-4846: ACT  : let,42,0
-4851: ACT  : let,43,0
-4856: ACT  : let,90,0
-4861: ACT  : let,91,0
-4870: WIFI : Connected! AP: Home (64:D1:54:3D:2F:76) Ch: 1 Duration: 760 ms
-4881: WIFI : Arduino wifi status: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. 
-4883: WIFI : Static IP: 192.168.1.236 (ESP32-1-Easy-4) GW: 192.168.1.0 SN: 255.255.255.0 DNS: 192.168.1.1 / 0.0.0.0   duration: 1438 
-4905: Skip saving SecuritySettings, not changed
-4936: UDP : Start listening on port 8266
-4938: firstLoopConnectionsEstablished
-4942: Internal command: All checked OK
-4948: EVENT: TaskInit#st_mode=7,1
-5001: Webserver: stop
-5032: NTP  : NTP replied: delay 24 ms round-trip delay: 24 ms offset: 20530T12:08:49.327,^  t0: 1773835028.668,^  t1: 5.003,^  t2: 17
-5045: Time set to 1773835734.357
-5046: Current Time Zone:  DST time start: 2026-03-29 02:00:00 offset: 180 min STD time start: 2026-10-25 01:00:00 offset: 120 min
-5068: Local time: 2026-03-18 14:08:54
-5078: Webserver: start
-5083: Dummy: value 1: 0
-5085: Dummy: value 2: 0
-5086: Dummy: value 3: 0
-5097: Dummy: value 4: 0
-5107: Dummy: value 1: 0
-5108: Dummy: value 2: 0
-5118: Dummy: value 1: 1
-5119: Dummy: value 2: 0
-5120: Dummy: value 3: 0
-5132: Dummy: value 4: 0
-5143: Dummy: value 1: 1
-5144: Dummy: value 2: 0
-5146: Dummy: value 3: 0
-5157: Dummy: value 4: 0
-5347: SW   : State 0
-5358: EVENT: TaskInit#st_aux=8,1
-5405: SW   : State 1
-5409: SW   : State 1
-5420: GPIO  : Port=33 State=1 Output value=1
-5424: GPIO  : Port=34 State=1 Output value=0
-5460: DHT  : Temperature: 23.10
-5461: DHT  : Humidity: 45.0
-5479: MQTT : Start background connect for controller 2
-5481: MQTT : Connecting to: 192.168.1.23:1883
-5492: MQTT : Intentional reconnect
-5503: EVENT: TaskInit#st_climate=9,1
-5585: EVENT: TaskInit#st_main=10,1
-5643: MQTT : Connected to broker with client ID: ESP32_1_Easy_4_4
-5653: MQTT : Subscribed to: cat_home/ESP32_1_Easy_4/cmd/#
-5655: MQTT : Background Connect request Ready
-5661: MQTT : Background Connect request success, took 58 msec
-5674: EVENT: TaskInit#OLED=12,1
-5723: EVENT: Clock#Time=Wed,14:08
-5790: DS   : Temperature: 7.06 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-5805: EVENT: TaskInit#tank=13,1
-5866: EVENT: TaskInit#floor=14,1
-5925: EVENT: TaskInit#dvig=15,1
-5985: EVENT: TaskInit#leak=16,1
-6036: EVENT: TaskInit#pwr=17,1
-6083: EVENT: TaskInit#room=18,1
-6150: EVENT: TaskInit#out=19,1
-6208: DS   : Temperature: 57.31 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-6235: DS   : Temperature: 21.50 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-6251: EVENT: WiFi#ChangedAccesspoint
-6306: WD   : Uptime 0  ConnectFailures 0 FreeMem 192140 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-6343: EVENT: WiFi#ChangedWiFichannel
-6390: EVENT: WiFi#Connected
-6439: EVENT: p2pNode#Connected=4,'ESP32_1_Easy','20260121'
-6508: EVENT: Time#Initialized
-6570: EVENT: st_mode#dhwmode=0
-6619: EVENT: st_mode#ventmode=0
-6664: EVENT: st_mode#ufmode=0
-6725: EVENT: st_mode#xtenmode=0
-6791: EVENT: st_aux#valve=0
-6839: EVENT: st_aux#uf=0
-6899: EVENT: st_climate#bpump=1
-6949: EVENT: st_climate#lpump=0
-7010: EVENT: st_climate#ac=0
-7056: ACT  : Servo,1,19,85
-7140: Servo : GPIO 19 Servo set to 85
-7143: ACT  : TaskValueSet,8,1,0
-7148: taskValueSet: TaskValueSet,8,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
-7174: EVENT: st_climate#vent=0
-7219: EVENT: st_main#water=1
-7269: EVENT: st_main#dhw=0
-7328: EVENT: st_main#xten=0
-7388: EVENT: st_main#boiler=0
-7437: EVENT: dvig#State=0
-7499: EVENT: leak#State=1
-7529: ACT  : PCFGPIO,1,1
-7533: PCF: port#1: set to 1
-7536: ACT  : PCFGPIO,2,0
-7539: PCF: port#2: set to 0
-7542: ACT  : TaskValueSet,st_main,1,1
-7558: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
-7573: EVENT: pwr#State=1
-7626: EVENT: dvig#State=1
-7793: EVENT: leak#State=0
-7813: ACT  : PCFGPIO,1,1
-7818: PCF: port#1: set to 1
-7820: ACT  : PCFGPIO,2,0
-7825: PCF: port#2: set to 0
-7828: ACT  : TaskValueSet,st_main,1,1
-7834: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
-7847: EVENT: room#Temp=23.10
-7871: ACT  : let,90,1
-7926: ACT  : GPIO,27,0
-7930: GPIO: port#27: set to 0
-7932: ACT  : TaskValueSet,9,2,0
-7938: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-7974: ACT  : PCFGPIO,7,0
-7978: PCF: port#7: set to 0
-7980: ACT  : TaskValueSet,9,3,0
-7986: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-8017: static_file: /esp.css to: 192.168.1.1
-8080: EVENT: room#Humi=45.0
-8107: ACT  : let,90,1
-8214: ACT  : PCFGPIO,8,0
-8218: PCF: port#8: set to 0
-8221: ACT  : TaskValueSet,9,4,0
-8227: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-8239: EVENT: MQTT#Connected
-8463: EVENT: out#Temp=7.06
-8490: ACT  : let,90,1
-8522: ACT  : PCFGPIO,4,1
-8527: PCF: port#4: set to 1
-8529: ACT  : TaskValueSet,10,3,1
-8535: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-8554: EVENT: tank#Temp=57.31
-8581: ACT  : let,90,1
-8659: ACT  : PCFGPIO,6,0
-8664: PCF: port#6: set to 0
-8666: ACT  : TaskValueSet,10,4,0
-8672: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-8684: ACT  : TimerSet,1,300
-8689: ACT  : PCFGPIO,3,1
-8692: PCF: port#3: set to 1
-8695: ACT  : TaskValueSet,9,1,1
-8700: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-8725: EVENT: floor#Temp=21.50
-11649: EVENT: Clock#Time=Wed,14:09
-35004: DHT  : Temperature: 23.20
-35005: DHT  : Humidity: 45.0
-35025: EVENT: room#Temp=23.20
-35050: ACT  : let,90,1
-35091: ACT  : GPIO,27,0
-35095: GPIO: port#27: set to 0
-35097: ACT  : TaskValueSet,9,2,0
-35103: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-35139: ACT  : PCFGPIO,7,0
-35144: PCF: port#7: set to 0
-35146: ACT  : TaskValueSet,9,3,0
-35151: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-35184: EVENT: room#Humi=45.0
-35209: ACT  : let,90,1
-35317: ACT  : PCFGPIO,8,0
-35321: PCF: port#8: set to 0
-35324: ACT  : TaskValueSet,9,4,0
-35330: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-36195: DS   : Temperature: 57.25 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-36220: DS   : Temperature: 21.44 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-36236: EVENT: tank#Temp=57.25
-36264: ACT  : let,90,1
-36344: ACT  : PCFGPIO,6,0
-36348: PCF: port#6: set to 0
-36351: ACT  : TaskValueSet,10,4,0
-36357: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-36360: ACT  : TimerSet,1,300
-36364: ACT  : PCFGPIO,3,1
-36369: PCF: port#3: set to 1
-36382: ACT  : TaskValueSet,9,1,1
-36387: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-36406: WD   : Uptime 1  ConnectFailures 0 FreeMem 191528 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-36530: EVENT: floor#Temp=21.44
-36589: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-36620: EVENT: out#Temp=7.00
-36645: ACT  : let,90,1
-36677: ACT  : PCFGPIO,4,1
-36682: PCF: port#4: set to 1
-36684: ACT  : TaskValueSet,10,3,1
-36690: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-65003: DHT  : Temperature: 23.10
-65005: DHT  : Humidity: 45.0
-65024: EVENT: room#Temp=23.10
-65048: ACT  : let,90,1
-65090: ACT  : GPIO,27,0
-65093: GPIO: port#27: set to 0
-65096: ACT  : TaskValueSet,9,2,0
-65101: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-65137: ACT  : PCFGPIO,7,0
-65143: PCF: port#7: set to 0
-65145: ACT  : TaskValueSet,9,3,0
-65151: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-65172: EVENT: room#Humi=45.0
-65197: ACT  : let,90,1
-65306: ACT  : PCFGPIO,8,0
-65310: PCF: port#8: set to 0
-65312: ACT  : TaskValueSet,9,4,0
-65329: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-66189: DS   : Temperature: 57.19 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-66207: EVENT: tank#Temp=57.19
-66234: ACT  : let,90,1
-66312: ACT  : PCFGPIO,6,0
-66317: PCF: port#6: set to 0
-66319: ACT  : TaskValueSet,10,4,0
-66325: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-66338: ACT  : TimerSet,1,300
-66342: ACT  : PCFGPIO,3,1
-66346: PCF: port#3: set to 1
-66348: ACT  : TaskValueSet,9,1,1
-66364: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-66380: DS   : Temperature: Error! (28-61-65-75-d0-01-3c-c0 [DS18B20])
-66403: WD   : Uptime 1  ConnectFailures 0 FreeMem 190780 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-66443: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-66459: EVENT: out#Temp=7.00
-66485: ACT  : let,90,1
-66517: ACT  : PCFGPIO,4,1
-66521: PCF: port#4: set to 1
-66523: ACT  : TaskValueSet,10,3,1
-66539: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-71657: EVENT: Clock#Time=Wed,14:10
-95003: DHT  : Temperature: 23.10
-95004: DHT  : Humidity: 45.0
-95024: EVENT: room#Temp=23.10
-95049: ACT  : let,90,1
-95090: ACT  : GPIO,27,0
-95094: GPIO: port#27: set to 0
-95096: ACT  : TaskValueSet,9,2,0
-95112: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-95148: ACT  : PCFGPIO,7,0
-95153: PCF: port#7: set to 0
-95155: ACT  : TaskValueSet,9,3,0
-95171: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-95197: EVENT: room#Humi=45.0
-95222: ACT  : let,90,1
-95329: ACT  : PCFGPIO,8,0
-95333: PCF: port#8: set to 0
-95335: ACT  : TaskValueSet,9,4,0
-95352: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-96209: DS   : Temperature: 57.25 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-96225: EVENT: tank#Temp=57.25
-96253: ACT  : let,90,1
-96330: ACT  : PCFGPIO,6,0
-96335: PCF: port#6: set to 0
-96337: ACT  : TaskValueSet,10,4,0
-96343: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-96356: ACT  : TimerSet,1,300
-96360: ACT  : PCFGPIO,3,1
-96364: PCF: port#3: set to 1
-96366: ACT  : TaskValueSet,9,1,1
-96382: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-96401: WD   : Uptime 2  ConnectFailures 0 FreeMem 193796 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-96430: DS   : Temperature: Error! (28-61-65-75-d0-01-3c-c0 [DS18B20])
-96463: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-96481: EVENT: out#Temp=7.00
-96506: ACT  : let,90,1
-96537: ACT  : PCFGPIO,4,1
-96542: PCF: port#4: set to 1
-96544: ACT  : TaskValueSet,10,3,1
-96550: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-125009: DHT  : Temperature: 23.20
-125011: DHT  : Humidity: 46.0
-125031: EVENT: room#Temp=23.20
-125055: ACT  : let,90,1
-125098: ACT  : GPIO,27,0
-125102: GPIO: port#27: set to 0
-125104: ACT  : TaskValueSet,9,2,0
-125109: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-125145: ACT  : PCFGPIO,7,0
-125151: PCF: port#7: set to 0
-125154: ACT  : TaskValueSet,9,3,0
-125159: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-125183: EVENT: room#Humi=46.0
-125208: ACT  : let,90,1
-125315: ACT  : PCFGPIO,8,0
-125320: PCF: port#8: set to 0
-125322: ACT  : TaskValueSet,9,4,0
-125339: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-126201: WD   : Uptime 2  ConnectFailures 0 FreeMem 194540 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-126282: DS   : Temperature: 57.25 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-126297: EVENT: tank#Temp=57.25
-126324: ACT  : let,90,1
-126403: ACT  : PCFGPIO,6,0
-126408: PCF: port#6: set to 0
-126410: ACT  : TaskValueSet,10,4,0
-126416: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-126429: ACT  : TimerSet,1,300
-126433: ACT  : PCFGPIO,3,1
-126437: PCF: port#3: set to 1
-126439: ACT  : TaskValueSet,9,1,1
-126445: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-126474: DS   : Temperature: 21.56 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-126493: EVENT: floor#Temp=21.56
-126659: DS   : Temperature: 7.06 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-126678: EVENT: out#Temp=7.06
-126705: ACT  : let,90,1
-126736: ACT  : PCFGPIO,4,1
-126741: PCF: port#4: set to 1
-126743: ACT  : TaskValueSet,10,3,1
-126749: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-131651: EVENT: Clock#Time=Wed,14:11
-155007: DHT  : Temperature: 23.10
-155009: DHT  : Humidity: 45.0
-155028: EVENT: room#Temp=23.10
-155274: ACT  : let,90,1
-155315: ACT  : GPIO,27,0
-155319: GPIO: port#27: set to 0
-155321: ACT  : TaskValueSet,9,2,0
-155337: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-155377: ACT  : PCFGPIO,7,0
-155381: PCF: port#7: set to 0
-155384: ACT  : TaskValueSet,9,3,0
-155399: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-155418: EVENT: room#Humi=45.0
-155443: ACT  : let,90,1
-155550: ACT  : PCFGPIO,8,0
-155555: PCF: port#8: set to 0
-155558: ACT  : TaskValueSet,9,4,0
-155565: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-156211: WD   : Uptime 3  ConnectFailures 0 FreeMem 209544 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-156561: DS   : Temperature: 57.19 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-156577: EVENT: tank#Temp=57.19
-156826: ACT  : let,90,1
-156906: ACT  : PCFGPIO,6,0
-156911: PCF: port#6: set to 0
-156913: ACT  : TaskValueSet,10,4,0
-156919: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-156932: ACT  : TimerSet,1,300
-156936: ACT  : PCFGPIO,3,1
-156940: PCF: port#3: set to 1
-156943: ACT  : TaskValueSet,9,1,1
-156949: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-156968: DS   : Temperature: 21.50 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-157050: EVENT: floor#Temp=21.50
-157109: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-157125: EVENT: out#Temp=7.00
-157151: ACT  : let,90,1
-157182: ACT  : PCFGPIO,4,1
-157187: PCF: port#4: set to 1
-157189: ACT  : TaskValueSet,10,3,1
-157205: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-185008: DHT  : Temperature: 23.10
-185010: DHT  : Humidity: 45.0
-185040: EVENT: room#Temp=23.10
-185287: ACT  : let,90,1
-185329: ACT  : GPIO,27,0
-185333: GPIO: port#27: set to 0
-185335: ACT  : TaskValueSet,9,2,0
-185340: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-185378: ACT  : PCFGPIO,7,0
-185382: PCF: port#7: set to 0
-185385: ACT  : TaskValueSet,9,3,0
-185400: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-185423: EVENT: room#Humi=45.0
-185448: ACT  : let,90,1
-185556: ACT  : PCFGPIO,8,0
-185561: PCF: port#8: set to 0
-185564: ACT  : TaskValueSet,9,4,0
-185571: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-186202: WD   : Uptime 3  ConnectFailures 0 FreeMem 194104 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-186574: DS   : Temperature: 57.19 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-186592: EVENT: tank#Temp=57.19
-186619: ACT  : let,90,1
-186697: ACT  : PCFGPIO,6,0
-186702: PCF: port#6: set to 0
-186704: ACT  : TaskValueSet,10,4,0
-186710: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-186723: ACT  : TimerSet,1,300
-186727: ACT  : PCFGPIO,3,1
-186731: PCF: port#3: set to 1
-186733: ACT  : TaskValueSet,9,1,1
-186739: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-186760: DS   : Temperature: 21.44 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-186799: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-186816: EVENT: floor#Temp=21.44
-186947: EVENT: out#Temp=7.00
-186973: ACT  : let,90,1
-187007: ACT  : PCFGPIO,4,1
-187011: PCF: port#4: set to 1
-187014: ACT  : TaskValueSet,10,3,1
-187020: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-191656: EVENT: Clock#Time=Wed,14:12
-215008: DHT  : Temperature: 23.10
-215009: DHT  : Humidity: 45.0
-215040: EVENT: room#Temp=23.10
-215065: ACT  : let,90,1
-215106: ACT  : GPIO,27,0
-215110: GPIO: port#27: set to 0
-215112: ACT  : TaskValueSet,9,2,0
-215128: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-215164: ACT  : PCFGPIO,7,0
-215169: PCF: port#7: set to 0
-215171: ACT  : TaskValueSet,9,3,0
-215177: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-215200: EVENT: room#Humi=45.0
-215225: ACT  : let,90,1
-215333: ACT  : PCFGPIO,8,0
-215337: PCF: port#8: set to 0
-215339: ACT  : TaskValueSet,9,4,0
-215356: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-216212: WD   : Uptime 4  ConnectFailures 0 FreeMem 193868 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-216576: DS   : Temperature: 57.19 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-216605: EVENT: tank#Temp=57.19
-216632: ACT  : let,90,1
-216710: ACT  : PCFGPIO,6,0
-216715: PCF: port#6: set to 0
-216717: ACT  : TaskValueSet,10,4,0
-216723: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-216736: ACT  : TimerSet,1,300
-216740: ACT  : PCFGPIO,3,1
-216744: PCF: port#3: set to 1
-216746: ACT  : TaskValueSet,9,1,1
-216752: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-216780: DS   : Temperature: Error! (28-61-65-75-d0-01-3c-c0 [DS18B20])
-216802: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-216836: EVENT: out#Temp=7.00
-216862: ACT  : let,90,1
-216893: ACT  : PCFGPIO,4,1
-216898: PCF: port#4: set to 1
-216900: ACT  : TaskValueSet,10,3,1
-216907: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
-245005: DHT  : Temperature: 23.20
-245007: DHT  : Humidity: 46.0
-245026: EVENT: room#Temp=23.20
-245050: ACT  : let,90,1
-245092: ACT  : GPIO,27,0
-245096: GPIO: port#27: set to 0
-245099: ACT  : TaskValueSet,9,2,0
-245104: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-245140: ACT  : PCFGPIO,7,0
-245144: PCF: port#7: set to 0
-245147: ACT  : TaskValueSet,9,3,0
-245152: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-245174: EVENT: room#Humi=46.0
-245199: ACT  : let,90,1
-245306: ACT  : PCFGPIO,8,0
-245311: PCF: port#8: set to 0
-245313: ACT  : TaskValueSet,9,4,0
-245319: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-246202: WD   : Uptime 4  ConnectFailures 0 FreeMem 193916 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-246581: DS   : Temperature: 57.19 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-246596: EVENT: tank#Temp=57.19
-246624: ACT  : let,90,1
-246703: ACT  : PCFGPIO,6,0
-246707: PCF: port#6: set to 0
-246710: ACT  : TaskValueSet,10,4,0
-246716: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-246728: ACT  : TimerSet,1,300
-246732: ACT  : PCFGPIO,3,1
-246736: PCF: port#3: set to 1
-246739: ACT  : TaskValueSet,9,1,1
-246744: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-246778: DS   : Temperature: 21.50 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-246812: DS   : Temperature: Error! (28-ba-51-95-f0-01-3c-ba [DS18B20])
-246825: EVENT: floor#Temp=21.50
-251649: EVENT: Clock#Time=Wed,14:13
-275003: DHT  : Temperature: 23.10
-275004: DHT  : Humidity: 45.0
-275023: EVENT: room#Temp=23.10
-275048: ACT  : let,90,1
-275091: ACT  : GPIO,27,0
-275094: GPIO: port#27: set to 0
-275097: ACT  : TaskValueSet,9,2,0
-275102: taskValueSet: TaskValueSet,9,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
-275135: ACT  : PCFGPIO,7,0
-275139: PCF: port#7: set to 0
-275142: ACT  : TaskValueSet,9,3,0
-275147: taskValueSet: TaskValueSet,9,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
-275174: EVENT: room#Humi=45.0
-275199: ACT  : let,90,1
-275306: ACT  : PCFGPIO,8,0
-275310: PCF: port#8: set to 0
-275313: ACT  : TaskValueSet,9,4,0
-275329: taskValueSet: TaskValueSet,9,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
-276201: WD   : Uptime 5  ConnectFailures 0 FreeMem 193864 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
-276584: DS   : Temperature: 57.19 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
-276599: EVENT: tank#Temp=57.19
-276626: ACT  : let,90,1
-276702: ACT  : PCFGPIO,6,0
-276708: PCF: port#6: set to 0
-276711: ACT  : TaskValueSet,10,4,0
-276718: taskValueSet: TaskValueSet,10,4,0  taskindex: 9 varNr: 3 result: 0.000000 type: 7
-276730: ACT  : TimerSet,1,300
-276734: ACT  : PCFGPIO,3,1
-276738: PCF: port#3: set to 1
-276741: ACT  : TaskValueSet,9,1,1
-276746: taskValueSet: TaskValueSet,9,1,1  taskindex: 8 varNr: 0 result: 1.000000 type: 7
-276782: DS   : Temperature: 21.44 (28-61-65-75-d0-01-3c-c0 [DS18B20])
-276797: EVENT: floor#Temp=21.44
-276932: DS   : Temperature: 7.00 (28-ba-51-95-f0-01-3c-ba [DS18B20])
-276955: EVENT: out#Temp=7.00
-276981: ACT  : let,90,1
-277013: ACT  : PCFGPIO,4,1
-277018: PCF: port#4: set to 1
-277021: ACT  : TaskValueSet,10,3,1
-277027: taskValueSet: TaskValueSet,10,3,1  taskindex: 9 varNr: 2 result: 1.000000 type: 7
+5575: taskValueSet: TaskValueSet,st_climate,2,0  taskindex: 8 varNr: 1 result: 0.000000 type: 7
+5588: ACT  : TaskValueSet,st_climate,3,0
+5593: taskValueSet: TaskValueSet,st_climate,3,0  taskindex: 8 varNr: 2 result: 0.000000 type: 7
+5606: ACT  : TaskValueSet,st_climate,4,0
+5612: taskValueSet: TaskValueSet,st_climate,4,0  taskindex: 8 varNr: 3 result: 0.000000 type: 7
+5614: ACT  : TaskValueSet,st_aux,1,0
+5620: taskValueSet: TaskValueSet,st_aux,1,0  taskindex: 7 varNr: 0 result: 0.000000 type: 5
+5633: ACT  : TaskValueSet,st_aux,2,0
+5639: taskValueSet: TaskValueSet,st_aux,2,0  taskindex: 7 varNr: 1 result: 0.000000 type: 5
+5651: ACT  : let,40,2
+5657: ACT  : let,41,2
+5662: ACT  : let,42,2
+5667: ACT  : let,43,2
+5672: ACT  : TaskValueSet,st_mode,1,2
+5679: taskValueSet: TaskValueSet,st_mode,1,2  taskindex: 6 varNr: 0 result: 2.000000 type: 7
+5691: ACT  : TaskValueSet,st_mode,2,2
+5697: taskValueSet: TaskValueSet,st_mode,2,2  taskindex: 6 varNr: 1 result: 2.000000 type: 7
+5710: ACT  : TaskValueSet,st_mode,3,2
+5716: taskValueSet: TaskValueSet,st_mode,3,2  taskindex: 6 varNr: 2 result: 2.000000 type: 7
+5719: ACT  : TaskValueSet,st_mode,4,2
+5735: taskValueSet: TaskValueSet,st_mode,4,2  taskindex: 6 varNr: 3 result: 2.000000 type: 7
+5738: ACT  : let,50,0
+5743: ACT  : let,51,0
+5748: ACT  : let,52,0
+5753: ACT  : let,53,0
+5758: ACT  : let,54,0
+5764: ACT  : let,55,0
+5769: ACT  : let,56,0
+5774: ACT  : let,61,0
+5779: ACT  : let,62,0
+5784: ACT  : let,63,0
+5789: ACT  : let,64,0
+5795: ACT  : let,65,0
+5800: ACT  : let,66,0
+5805: ACT  : let,67,0
+5810: ACT  : let,68,0
+5816: ACT  : let,90,0
+5821: ACT  : let,91,0
+5829: WIFI : Connected! AP: Home (64:D1:54:3D:2F:76) Ch: 1 Duration: 747 ms
+5830: WIFI : Arduino wifi status: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. 
+5843: WIFI : Static IP: 192.168.1.236 (ESP32-1-Easy-4) GW: 192.168.1.0 SN: 255.255.255.0 DNS: 192.168.1.1 / 0.0.0.0   duration: 2337 
+5855: Skip saving SecuritySettings, not changed
+5885: UDP : Start listening on port 8266
+5887: firstLoopConnectionsEstablished
+5891: Internal command: All checked OK
+5899: EVENT: TaskInit#st_mode=7,1
+6046: Webserver: stop
+6066: NTP  : NTP replied: delay 12 ms round-trip delay: 13 ms offset: 20530T16:45:45.870,^  t0: 1773851751.669,^  t1: 6.049,^  t2: 17
+6079: Time set to 1773852351.934
+6090: Current Time Zone:  DST time start: 2026-03-29 02:00:00 offset: 180 min STD time start: 2026-10-25 01:00:00 offset: 120 min
+6103: Local time: 2026-03-18 18:45:51
+6112: Webserver: start
+6117: Dummy: value 1: 2
+6119: Dummy: value 2: 2
+6120: Dummy: value 3: 2
+6131: Dummy: value 4: 2
+6140: Dummy: value 1: 0
+6141: Dummy: value 2: 0
+6147: Dummy: value 1: 0
+6148: Dummy: value 2: 0
+6149: Dummy: value 3: 0
+6161: Dummy: value 4: 0
+6169: Dummy: value 1: 1
+6170: Dummy: value 2: 0
+6172: Dummy: value 3: 0
+6183: Dummy: value 4: 0
+6457: SW   : State 0
+6464: SW   : State 1
+6469: SW   : State 1
+6498: DHT  : Temperature: 23.20
+6500: DHT  : Humidity: 47.0
+6531: EVENT: TaskInit#st_aux=8,1
+6657: EVENT: TaskInit#st_climate=9,1
+6788: GPIO  : Port=33 State=1 Output value=1
+6792: GPIO  : Port=34 State=1 Output value=0
+6804: MQTT : Start background connect for controller 2
+6806: MQTT : Connecting to: 192.168.1.23:1883
+6817: MQTT : Intentional reconnect
+6836: EVENT: TaskInit#st_main=10,1
+6974: EVENT: Clock#Time=Wed,18:45
+7118: EVENT: TaskInit#OLED=12,1
+7254: MQTT : Connected to broker with client ID: ESP32_1_Easy_4_4
+7261: MQTT : Subscribed to: cat_home/ESP32_1_Easy_4/cmd/#
+7263: MQTT : Background Connect request Ready
+7275: MQTT : Background Connect request success, took 44 msec
+7287: EVENT: TaskInit#tank=13,1
+7413: EVENT: TaskInit#floor=14,1
+7548: WD   : Uptime 0  ConnectFailures 0 FreeMem 164568 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+7580: DS   : Temperature: 52.81 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+7604: DS   : Temperature: 21.06 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+7619: EVENT: TaskInit#dvig=15,1
+7758: DS   : Temperature: 6.19 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+7793: EVENT: TaskInit#leak=16,1
+7931: EVENT: TaskInit#pwr=17,1
+8058: EVENT: TaskInit#room=18,1
+8201: EVENT: TaskInit#out=19,1
+8340: EVENT: WiFi#ChangedAccesspoint
+8479: EVENT: WiFi#ChangedWiFichannel
+8727: EVENT: WiFi#Connected
+8852: EVENT: p2pNode#Connected=4,'ESP32_1_Easy','20260121'
+8997: static_file: /esp.css to: 192.168.1.1
+9079: EVENT: Time#Initialized
+9120: ACT  : event,EVAL_DHW
+9123: EVENT: EVAL_DHW
+9243: ACT  : event,EVAL_BOILER
+9246: EVENT: EVAL_BOILER
+9367: ACT  : event,EVAL_CLIMATE
+9370: EVENT: EVAL_CLIMATE
+9490: ACT  : event,EVAL_UF
+9493: EVENT: EVAL_UF
+9613: EVENT: st_mode#dhwmode=2
+9880: EVENT: st_mode#ventmode=2
+10038: EVENT: st_mode#ufmode=2
+10180: EVENT: st_mode#xtenmode=2
+10306: EVENT: st_aux#valve=0
+10433: EVENT: st_aux#uf=0
+10570: EVENT: st_climate#bpump=0
+10698: EVENT: st_climate#lpump=0
+10843: EVENT: st_climate#ac=0
+10964: EVENT: st_climate#vent=0
+11270: EVENT: st_main#water=1
+11412: EVENT: st_main#dhw=0
+11537: EVENT: st_main#xten=0
+11658: EVENT: st_main#boiler=0
+11797: EVENT: dvig#State=0
+11926: EVENT: leak#State=1
+11932: ACT  : let,90,1
+11971: ACT  : PCFGPIO,1,1
+11975: PCF: port#1: set to 1
+11978: ACT  : PCFGPIO,2,0
+11981: PCF: port#2: set to 0
+11984: ACT  : TaskValueSet,st_main,1,1
+11990: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
+11996: ACT  : event,EVAL_DHW
+12009: EVENT: EVAL_DHW
+12129: ACT  : event,EVAL_XTEN
+12132: EVENT: EVAL_XTEN
+12252: ACT  : event,EVAL_BOILER
+12255: EVENT: EVAL_BOILER
+12375: ACT  : event,EVAL_CLIMATE
+12378: EVENT: EVAL_CLIMATE
+12498: ACT  : event,EVAL_UF
+12500: EVENT: EVAL_UF
+12619: EVENT: pwr#State=1
+12625: ACT  : let,90,1
+12630: ACT  : event,EVAL_DHW
+12633: EVENT: EVAL_DHW
+12753: ACT  : event,EVAL_XTEN
+12756: EVENT: EVAL_XTEN
+12876: ACT  : event,EVAL_BOILER
+12879: EVENT: EVAL_BOILER
+13000: ACT  : event,EVAL_CLIMATE
+13002: EVENT: EVAL_CLIMATE
+13123: ACT  : event,EVAL_UF
+13126: EVENT: EVAL_UF
+13340: EVENT: room#Temp=23.20
+13364: ACT  : let,90,1
+13370: ACT  : event,EVAL_CLIMATE
+13373: EVENT: EVAL_CLIMATE
+13515: EVENT: room#Humi=47.0
+13539: ACT  : let,90,1
+13544: ACT  : event,EVAL_CLIMATE
+13546: EVENT: EVAL_CLIMATE
+13672: EVENT: dvig#State=1
+13795: EVENT: leak#State=0
+13800: ACT  : let,90,1
+13817: ACT  : PCFGPIO,1,1
+13821: PCF: port#1: set to 1
+13823: ACT  : PCFGPIO,2,0
+13827: PCF: port#2: set to 0
+13829: ACT  : TaskValueSet,st_main,1,1
+13835: taskValueSet: TaskValueSet,st_main,1,1  taskindex: 9 varNr: 0 result: 1.000000 type: 7
+13841: ACT  : event,EVAL_DHW
+13854: EVENT: EVAL_DHW
+13975: ACT  : event,EVAL_XTEN
+13978: EVENT: EVAL_XTEN
+14098: ACT  : event,EVAL_BOILER
+14101: EVENT: EVAL_BOILER
+14221: ACT  : event,EVAL_CLIMATE
+14224: EVENT: EVAL_CLIMATE
+14344: ACT  : event,EVAL_UF
+14346: EVENT: EVAL_UF
+14537: EVENT: Clock#Time=Wed,18:46
+14681: EVENT: MQTT#Connected
+14824: EVENT: tank#Temp=52.81
+14850: ACT  : let,90,1
+14855: ACT  : event,EVAL_XTEN
+14858: EVENT: EVAL_XTEN
+14978: ACT  : event,EVAL_BOILER
+14981: EVENT: EVAL_BOILER
+15101: ACT  : event,EVAL_CLIMATE
+15104: EVENT: EVAL_CLIMATE
+15224: EVENT: floor#Temp=21.06
+15354: EVENT: out#Temp=6.19
+15378: ACT  : let,90,1
+15383: ACT  : event,EVAL_XTEN
+15386: EVENT: EVAL_XTEN
+15506: ACT  : event,EVAL_BOILER
+15509: EVENT: EVAL_BOILER
+15630: ACT  : event,EVAL_CLIMATE
+15633: EVENT: EVAL_CLIMATE
+35220: DHT  : Temperature: 23.10
+35221: DHT  : Humidity: 47.0
+35240: EVENT: room#Temp=23.10
+35264: ACT  : let,90,1
+35269: ACT  : event,EVAL_CLIMATE
+35272: EVENT: EVAL_CLIMATE
+35408: EVENT: room#Humi=47.0
+35431: ACT  : let,90,1
+35436: ACT  : event,EVAL_CLIMATE
+35439: EVENT: EVAL_CLIMATE
+37175: WD   : Uptime 1  ConnectFailures 0 FreeMem 173492 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+37261: DS   : Temperature: 52.81 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+37277: EVENT: tank#Temp=52.81
+37303: ACT  : let,90,1
+37308: ACT  : event,EVAL_XTEN
+37311: EVENT: EVAL_XTEN
+37430: ACT  : event,EVAL_BOILER
+37434: EVENT: EVAL_BOILER
+37554: ACT  : event,EVAL_CLIMATE
+37557: EVENT: EVAL_CLIMATE
+37924: DS   : Temperature: 21.06 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+37942: EVENT: floor#Temp=21.06
+38462: DS   : Temperature: 6.19 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+38532: EVENT: out#Temp=6.19
+38558: ACT  : let,90,1
+38564: ACT  : event,EVAL_XTEN
+38567: EVENT: EVAL_XTEN
+38687: ACT  : event,EVAL_BOILER
+38690: EVENT: EVAL_BOILER
+38810: ACT  : event,EVAL_CLIMATE
+38813: EVENT: EVAL_CLIMATE
+65221: DHT  : Temperature: 23.20
+65223: DHT  : Humidity: 47.0
+65242: EVENT: room#Temp=23.20
+65629: ACT  : let,90,1
+65634: ACT  : event,EVAL_CLIMATE
+65637: EVENT: EVAL_CLIMATE
+65756: EVENT: room#Humi=47.0
+65780: ACT  : let,90,1
+65785: ACT  : event,EVAL_CLIMATE
+65788: EVENT: EVAL_CLIMATE
+67182: WD   : Uptime 1  ConnectFailures 0 FreeMem 163888 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+67262: DS   : Temperature: 52.75 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+67279: EVENT: tank#Temp=52.75
+67305: ACT  : let,90,1
+67310: ACT  : event,EVAL_XTEN
+67313: EVENT: EVAL_XTEN
+67435: ACT  : event,EVAL_BOILER
+67438: EVENT: EVAL_BOILER
+67559: ACT  : event,EVAL_CLIMATE
+67562: EVENT: EVAL_CLIMATE
+67696: DS   : Temperature: 21.06 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+67713: EVENT: floor#Temp=21.06
+67868: DS   : Temperature: 6.19 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+67888: EVENT: out#Temp=6.19
+67913: ACT  : let,90,1
+67919: ACT  : event,EVAL_XTEN
+67922: EVENT: EVAL_XTEN
+68042: ACT  : event,EVAL_BOILER
+68045: EVENT: EVAL_BOILER
+68166: ACT  : event,EVAL_CLIMATE
+68169: EVENT: EVAL_CLIMATE
+74649: EVENT: Clock#Time=Wed,18:47
+95220: DHT  : Temperature: 23.10
+95222: DHT  : Humidity: 47.0
+95254: EVENT: room#Temp=23.10
+95277: ACT  : let,90,1
+95282: ACT  : event,EVAL_CLIMATE
+95285: EVENT: EVAL_CLIMATE
+95422: EVENT: room#Humi=47.0
+95446: ACT  : let,90,1
+95451: ACT  : event,EVAL_CLIMATE
+95454: EVENT: EVAL_CLIMATE
+97170: WD   : Uptime 2  ConnectFailures 0 FreeMem 172928 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+97265: DS   : Temperature: 52.75 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+97290: DS   : Temperature: 21.00 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+97307: EVENT: tank#Temp=52.75
+97333: ACT  : let,90,1
+97338: ACT  : event,EVAL_XTEN
+97342: EVENT: EVAL_XTEN
+97462: ACT  : event,EVAL_BOILER
+97465: EVENT: EVAL_BOILER
+97586: ACT  : event,EVAL_CLIMATE
+97588: EVENT: EVAL_CLIMATE
+97734: EVENT: floor#Temp=21.00
+97874: DS   : Temperature: 6.13 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+97895: EVENT: out#Temp=6.13
+97920: ACT  : let,90,1
+97925: ACT  : event,EVAL_XTEN
+97928: EVENT: EVAL_XTEN
+98049: ACT  : event,EVAL_BOILER
+98052: EVENT: EVAL_BOILER
+98171: ACT  : event,EVAL_CLIMATE
+98174: EVENT: EVAL_CLIMATE
+125220: DHT  : Temperature: 23.20
+125222: DHT  : Humidity: 46.0
+125253: EVENT: room#Temp=23.20
+125276: ACT  : let,90,1
+125282: ACT  : event,EVAL_CLIMATE
+125285: EVENT: EVAL_CLIMATE
+125422: EVENT: room#Humi=46.0
+125446: ACT  : let,90,1
+125451: ACT  : event,EVAL_CLIMATE
+125454: EVENT: EVAL_CLIMATE
+127160: WD   : Uptime 2  ConnectFailures 0 FreeMem 172916 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+127269: DS   : Temperature: 52.75 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+127286: EVENT: tank#Temp=52.75
+127312: ACT  : let,90,1
+127317: ACT  : event,EVAL_XTEN
+127320: EVENT: EVAL_XTEN
+127441: ACT  : event,EVAL_BOILER
+127444: EVENT: EVAL_BOILER
+127564: ACT  : event,EVAL_CLIMATE
+127567: EVENT: EVAL_CLIMATE
+127702: DS   : Temperature: 21.00 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+127730: EVENT: floor#Temp=21.00
+127865: DS   : Temperature: Error! (28-ba-51-95-f0-01-3c-ba [DS18B20])
+134612: EVENT: Clock#Time=Wed,18:48
+155220: DHT  : Temperature: 23.10
+155222: DHT  : Humidity: 47.0
+155242: EVENT: room#Temp=23.10
+155265: ACT  : let,90,1
+155271: ACT  : event,EVAL_CLIMATE
+155273: EVENT: EVAL_CLIMATE
+155420: EVENT: room#Humi=47.0
+155444: ACT  : let,90,1
+155449: ACT  : event,EVAL_CLIMATE
+155452: EVENT: EVAL_CLIMATE
+157170: WD   : Uptime 3  ConnectFailures 0 FreeMem 172920 WiFiStatus: WL_CONNECTED 3 ESPeasy internal wifi status: Conn. IP Init
+157272: DS   : Temperature: 52.75 (28-3c-2f-81-e3-8e-3c-82 [DS18B20])
+157288: EVENT: tank#Temp=52.75
+157314: ACT  : let,90,1
+157319: ACT  : event,EVAL_XTEN
+157322: EVENT: EVAL_XTEN
+157443: ACT  : event,EVAL_BOILER
+157446: EVENT: EVAL_BOILER
+157567: ACT  : event,EVAL_CLIMATE
+157571: EVENT: EVAL_CLIMATE
+157706: DS   : Temperature: 21.00 (28-61-65-75-d0-01-3c-c0 [DS18B20])
+157722: EVENT: floor#Temp=21.00
+157910: DS   : Temperature: 6.13 (28-ba-51-95-f0-01-3c-ba [DS18B20])
+157933: EVENT: out#Temp=6.13
+157958: ACT  : let,90,1
+157964: ACT  : event,EVAL_XTEN
+157967: EVENT: EVAL_XTEN
+158087: ACT  : event,EVAL_BOILER
+158090: EVENT: EVAL_BOILER
+158211: ACT  : event,EVAL_CLIMATE
+158213: EVENT: EVAL_CLIMATE
