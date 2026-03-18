@@ -63,14 +63,17 @@ endon
 on leak#State do
 let,90,1
 if [leak#State]=1
+LogEntry,'LEAK=1 -> WATER CLOSED'
 PCFGPIO,1,0
 PCFGPIO,2,1
 TaskValueSet,st_main,1,0
 elseif [leak#State]=0
+LogEntry,'LEAK=0 -> WATER OPEN'
 PCFGPIO,1,1
 PCFGPIO,2,0
 TaskValueSet,st_main,1,1
 else
+LogEntry,'LEAK=UNKNOWN -> WATER OPEN (FALLBACK)'
 PCFGPIO,1,1
 PCFGPIO,2,0
 TaskValueSet,st_main,1,1
