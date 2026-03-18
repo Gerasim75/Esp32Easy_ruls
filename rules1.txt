@@ -61,11 +61,15 @@ endon
 // ===== DHW MODE =====
 on event,DHWMODE=0 do
 let,40,0
+PCFGPIO,5,0
+TaskValueSet,10,2,0
 TaskValueSet,st_mode,1,0
 endon
 
 on event,DHWMODE=1 do
 let,40,1
+PCFGPIO,5,1
+TaskValueSet,10,2,1
 TaskValueSet,st_mode,1,1
 endon
 
