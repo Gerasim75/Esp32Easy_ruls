@@ -1,10 +1,20 @@
 // ===== CLIMATE =====
 on EVAL_CLIMATE do
 // AC
-if [var#52]=1 and [room#Temp]>=28 and [out#Temp]>=27
- LogEntry,'AC -> ON'
- PCFGPIO,7,1
- TaskValueSet,st_climate,3,1
+if [var#52]=1 and [out#Temp]>=27
+ if [room#Temp]>=28
+  LogEntry,'AC -> ON'
+  PCFGPIO,7,1
+  TaskValueSet,st_climate,3,1
+ elseif [st_climate#ac]=1 and [room#Temp]>25
+  LogEntry,'AC -> ON (HOLD)'
+  PCFGPIO,7,1
+  TaskValueSet,st_climate,3,1
+ else
+  LogEntry,'AC -> OFF'
+  PCFGPIO,7,0
+  TaskValueSet,st_climate,3,0
+ endif
 else
  LogEntry,'AC -> OFF'
  PCFGPIO,7,0
@@ -27,14 +37,41 @@ if [st_climate#ac]=1
  LogEntry,'LPUMP -> OFF (AC ON)'
  GPIO,27,0
  TaskValueSet,st_climate,2,0
-elseif [out#Temp]<16 and [room#Temp]<22.5 and [tank#Temp]>25
- LogEntry,'LPUMP -> ON (HEAT DEMAND)'
- GPIO,27,1
- TaskValueSet,st_climate,2,1
+elseif [out#Temp]<16 and [tank#Temp]>25
+ if [room#Temp]<22.2
+  LogEntry,'LPUMP -> ON (HEAT DEMAND)'
+  GPIO,27,1
+  TaskValueSet,st_climate,2,1
+ elseif [st_climate#lpump]=1 and [room#Temp]<22.8
+  LogEntry,'LPUMP -> ON (HOLD)'
+  GPIO,27,1
+  TaskValueSet,st_climate,2,1
+ else
+  LogEntry,'LPUMP -> OFF'
+  GPIO,27,0
+  TaskValueSet,st_climate,2,0
+ endif
 else
  LogEntry,'LPUMP -> OFF'
  GPIO,27,0
  TaskValueSet,st_climate,2,0
+endif
+
+// защелки гистерезиса вентиляции
+if [room#Humi]>65
+ let,71,1
+elseif [room#Humi]<60
+ let,71,0
+endif
+
+if [var#52]=1 and [out#Temp]<=25
+ if [room#Temp]>=28
+  let,72,1
+ elseif [room#Temp]<26
+  let,72,0
+ endif
+else
+ let,72,0
 endif
 
 // вентиляция
@@ -50,11 +87,11 @@ elseif [var#41]=1
  LogEntry,'VENT -> ON (FORCED)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
-elseif [room#Humi]>65
+elseif [var#71]=1
  LogEntry,'VENT -> ON (HUMIDITY)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
-elseif [var#52]=1 and [room#Temp]>=28 and [out#Temp]<=25
+elseif [var#72]=1
  LogEntry,'VENT -> ON (FREE COOLING)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1

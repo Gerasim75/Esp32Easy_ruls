@@ -63,12 +63,22 @@ if [pwr#State]=1 and [tank#Temp]<80
   LogEntry,'XTEN -> ON (FORCED)'
   PCFGPIO,4,1
   TaskValueSet,st_main,3,1
- elseif [var#43]=2 and [out#Temp]<16
-  LogEntry,'XTEN -> ON (AUTO COLD)'
-  PCFGPIO,4,1
-  TaskValueSet,st_main,3,1
+ elseif [var#43]=2
+  if [out#Temp]<15
+   LogEntry,'XTEN -> ON (AUTO COLD)'
+   PCFGPIO,4,1
+   TaskValueSet,st_main,3,1
+  elseif [st_main#xten]=1 and [out#Temp]<17
+   LogEntry,'XTEN -> ON (AUTO HOLD)'
+   PCFGPIO,4,1
+   TaskValueSet,st_main,3,1
+  else
+   LogEntry,'XTEN -> OFF (AUTO/WARM)'
+   PCFGPIO,4,0
+   TaskValueSet,st_main,3,0
+  endif
  else
-  LogEntry,'XTEN -> OFF (AUTO/WARM)'
+  LogEntry,'XTEN -> OFF (MODE OFF)'
   PCFGPIO,4,0
   TaskValueSet,st_main,3,0
  endif
@@ -90,18 +100,34 @@ elseif [out#Temp]>=16
 elseif [st_climate#ac]=1
  event,BOILER_OFF
 elseif [tank#Temp]<30 and [out#Temp]<16
- event,BOILER_ON
-elseif [st_main#boiler]=1 and [tank#Temp]<35 and [out#Temp]<16
- event,BOILER_ON
+ event,BOILER_ON_EMERG
 elseif [var#53]=1 and [tank#Temp]<70 and [out#Temp]<16
- event,BOILER_ON
+ event,BOILER_ON_NIGHT
+elseif [st_main#boiler]=1 and [tank#Temp]<35 and [out#Temp]<16
+ event,BOILER_ON_HOLD
 else
  event,BOILER_OFF
 endif
 endon
 
-on BOILER_ON do
-LogEntry,'BOILER -> ON'
+on BOILER_ON_EMERG do
+LogEntry,'BOILER -> ON (EMERGENCY)'
+PCFGPIO,6,1
+TaskValueSet,st_main,4,1
+PCFGPIO,3,1
+TaskValueSet,st_climate,1,1
+endon
+
+on BOILER_ON_NIGHT do
+LogEntry,'BOILER -> ON (NIGHT)'
+PCFGPIO,6,1
+TaskValueSet,st_main,4,1
+PCFGPIO,3,1
+TaskValueSet,st_climate,1,1
+endon
+
+on BOILER_ON_HOLD do
+LogEntry,'BOILER -> ON (HOLD)'
 PCFGPIO,6,1
 TaskValueSet,st_main,4,1
 PCFGPIO,3,1
