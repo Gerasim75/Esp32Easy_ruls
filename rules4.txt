@@ -2,75 +2,96 @@
 on event,EVAL_CLIMATE do
 // AC
 if [var#52]=1 and [room#Temp]>=28 and [out#Temp]>=27
+ LogEntry,'AC -> ON'
  PCFGPIO,7,1
  TaskValueSet,st_climate,3,1
 else
+ LogEntry,'AC -> OFF'
  PCFGPIO,7,0
  TaskValueSet,st_climate,3,0
 endif
 
 // заслонка: AC=1 -> закрыть, иначе открыть
 if [st_climate#ac]=1
+ LogEntry,'VALVE -> CLOSED (AC ON)'
  Servo,1,19,-85
  TaskValueSet,st_aux,1,1
 else
+ LogEntry,'VALVE -> OPEN (AC OFF)'
  Servo,1,19,85
  TaskValueSet,st_aux,1,0
 endif
 
 // отопительный насос
 if [st_climate#ac]=1
+ LogEntry,'LPUMP -> OFF (AC ON)'
  GPIO,27,0
  TaskValueSet,st_climate,2,0
 elseif [out#Temp]<16 and [room#Temp]<22.5 and [tank#Temp]>25
+ LogEntry,'LPUMP -> ON (HEAT DEMAND)'
  GPIO,27,1
  TaskValueSet,st_climate,2,1
 else
+ LogEntry,'LPUMP -> OFF'
  GPIO,27,0
  TaskValueSet,st_climate,2,0
 endif
 
 // вентиляция
 if [var#41]=0
+ LogEntry,'VENT -> OFF (MODE OFF)'
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
 elseif [st_climate#ac]=1
+ LogEntry,'VENT -> OFF (AC ON)'
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
 elseif [var#41]=1
+ LogEntry,'VENT -> ON (FORCED)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [room#Humi]>65
+ LogEntry,'VENT -> ON (HUMIDITY)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#52]=1 and [room#Temp]>=28 and [out#Temp]<=25
+ LogEntry,'VENT -> ON (FREE COOLING)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#61]=1
+ LogEntry,'VENT -> ON (SLOT 61)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#62]=1
+ LogEntry,'VENT -> ON (SLOT 62)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#63]=1
+ LogEntry,'VENT -> ON (SLOT 63)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#64]=1
+ LogEntry,'VENT -> ON (SLOT 64)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#65]=1
+ LogEntry,'VENT -> ON (SLOT 65)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#66]=1
+ LogEntry,'VENT -> ON (SLOT 66)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#67]=1
+ LogEntry,'VENT -> ON (SLOT 67)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#68]=1
+ LogEntry,'VENT -> ON (SLOT 68)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 else
+ LogEntry,'VENT -> OFF'
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
 endif
@@ -81,21 +102,27 @@ endon
 // ===== UF =====
 on event,EVAL_UF do
 if [var#42]=0
+ LogEntry,'UF -> OFF (MODE OFF)'
  GPIO,26,0
  TaskValueSet,st_aux,2,0
 elseif [var#42]=1
+ LogEntry,'UF -> ON (FORCED)'
  GPIO,26,1
  TaskValueSet,st_aux,2,1
 elseif [var#54]=1
+ LogEntry,'UF -> ON (WINDOW 54)'
  GPIO,26,1
  TaskValueSet,st_aux,2,1
 elseif [var#55]=1
+ LogEntry,'UF -> ON (WINDOW 55)'
  GPIO,26,1
  TaskValueSet,st_aux,2,1
 elseif [var#56]=1
+ LogEntry,'UF -> ON (WINDOW 56)'
  GPIO,26,1
  TaskValueSet,st_aux,2,1
 else
+ LogEntry,'UF -> OFF'
  GPIO,26,0
  TaskValueSet,st_aux,2,0
 endif

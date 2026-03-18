@@ -27,24 +27,30 @@ endon
 on event,EVAL_DHW do
 if [pwr#State]=1
  if [var#40]=1
+  LogEntry,'DHW -> ON (FORCED)'
   PCFGPIO,5,1
   TaskValueSet,st_main,2,1
  elseif [var#40]=2
   if [var#50]=1
+   LogEntry,'DHW -> ON (WINDOW 1)'
    PCFGPIO,5,1
    TaskValueSet,st_main,2,1
   elseif [var#51]=1
+   LogEntry,'DHW -> ON (WINDOW 2)'
    PCFGPIO,5,1
    TaskValueSet,st_main,2,1
   else
+   LogEntry,'DHW -> OFF (NO WINDOW)'
    PCFGPIO,5,0
    TaskValueSet,st_main,2,0
   endif
  else
+  LogEntry,'DHW -> OFF (MODE OFF)'
   PCFGPIO,5,0
   TaskValueSet,st_main,2,0
  endif
 else
+ LogEntry,'DHW -> OFF (NO POWER)'
  PCFGPIO,5,0
  TaskValueSet,st_main,2,0
 endif
@@ -54,16 +60,20 @@ endon
 on event,EVAL_XTEN do
 if [pwr#State]=1 and [tank#Temp]<80
  if [var#43]=1
+  LogEntry,'XTEN -> ON (FORCED)'
   PCFGPIO,4,1
   TaskValueSet,st_main,3,1
  elseif [var#43]=2 and [out#Temp]<16
+  LogEntry,'XTEN -> ON (AUTO COLD)'
   PCFGPIO,4,1
   TaskValueSet,st_main,3,1
  else
+  LogEntry,'XTEN -> OFF (AUTO/WARM)'
   PCFGPIO,4,0
   TaskValueSet,st_main,3,0
  endif
 else
+ LogEntry,'XTEN -> OFF (NO POWER OR TANK HOT)'
  PCFGPIO,4,0
  TaskValueSet,st_main,3,0
 endif
@@ -91,6 +101,7 @@ endif
 endon
 
 on event,BOILER_ON do
+LogEntry,'BOILER -> ON'
 PCFGPIO,6,1
 TaskValueSet,st_main,4,1
 PCFGPIO,3,1
@@ -99,10 +110,12 @@ endon
 
 on event,BOILER_OFF do
 if [st_main#boiler]=1
+ LogEntry,'BOILER -> OFF (RUN-ON)'
  TimerSet,1,300
  PCFGPIO,3,1
  TaskValueSet,st_climate,1,1
 else
+ LogEntry,'BOILER -> OFF'
  PCFGPIO,3,0
  TaskValueSet,st_climate,1,0
 endif
