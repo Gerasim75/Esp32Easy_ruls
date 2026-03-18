@@ -1,5 +1,5 @@
 // ===== CLIMATE =====
-on event,EVAL_CLIMATE do
+on EVAL_CLIMATE do
 // AC
 if [var#52]=1 and [room#Temp]>=28 and [out#Temp]>=27
  LogEntry,'AC -> ON'
@@ -100,7 +100,7 @@ event,EVAL_BOILER
 endon
 
 // ===== UF =====
-on event,EVAL_UF do
+on EVAL_UF do
 if [var#42]=0
  LogEntry,'UF -> OFF (MODE OFF)'
  GPIO,26,0

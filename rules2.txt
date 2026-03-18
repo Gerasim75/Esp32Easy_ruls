@@ -24,7 +24,7 @@ event,EVAL_CLIMATE
 endon
 
 // ===== DHW =====
-on event,EVAL_DHW do
+on EVAL_DHW do
 if [pwr#State]=1
  if [var#40]=1
   LogEntry,'DHW -> ON (FORCED)'
@@ -57,7 +57,7 @@ endif
 endon
 
 // ===== XTEN =====
-on event,EVAL_XTEN do
+on EVAL_XTEN do
 if [pwr#State]=1 and [tank#Temp]<80
  if [var#43]=1
   LogEntry,'XTEN -> ON (FORCED)'
@@ -80,7 +80,7 @@ endif
 endon
 
 // ===== BOILER =====
-on event,EVAL_BOILER do
+on EVAL_BOILER do
 if [pwr#State]=0
  event,BOILER_OFF
 elseif [tank#Temp]>=80
@@ -100,7 +100,7 @@ else
 endif
 endon
 
-on event,BOILER_ON do
+on BOILER_ON do
 LogEntry,'BOILER -> ON'
 PCFGPIO,6,1
 TaskValueSet,st_main,4,1
@@ -108,7 +108,7 @@ PCFGPIO,3,1
 TaskValueSet,st_climate,1,1
 endon
 
-on event,BOILER_OFF do
+on BOILER_OFF do
 if [st_main#boiler]=1
  LogEntry,'BOILER -> OFF (RUN-ON)'
  TimerSet,1,300
