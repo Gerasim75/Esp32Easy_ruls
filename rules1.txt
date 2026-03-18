@@ -60,25 +60,25 @@ let,91,0
 endon
 
 // ===== WATER LEAK =====
-on leak#State do
+on leak#State=1 do
 let,90,1
-if [leak#State]=1
 LogEntry,'LEAK=1 -> WATER CLOSED'
 PCFGPIO,1,0
 PCFGPIO,2,1
 TaskValueSet,st_main,1,0
-elseif [leak#State]=0
+event,EVAL_DHW
+event,EVAL_XTEN
+event,EVAL_BOILER
+event,EVAL_CLIMATE
+event,EVAL_UF
+endon
+
+on leak#State=0 do
+let,90,1
 LogEntry,'LEAK=0 -> WATER OPEN'
 PCFGPIO,1,1
 PCFGPIO,2,0
 TaskValueSet,st_main,1,1
-else
-LogEntry,'LEAK=UNKNOWN -> WATER OPEN (FALLBACK)'
-PCFGPIO,1,1
-PCFGPIO,2,0
-TaskValueSet,st_main,1,1
-endif
-
 event,EVAL_DHW
 event,EVAL_XTEN
 event,EVAL_BOILER
