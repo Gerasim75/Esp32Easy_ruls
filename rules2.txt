@@ -1,113 +1,118 @@
-//===== ROOM TEMP =====
+// ===== SENSOR-DRIVEN EVALUATION =====
 on room#Temp do
 let,90,1
-if [st_climate#ac]=1
-GPIO,27,0
-TaskValueSet,9,2,0
-elseif [out#Temp]<16
-if [room#Temp]<22.5
-if [tank#Temp]>25
-GPIO,27,1
-TaskValueSet,9,2,1
-else
-GPIO,27,0
-TaskValueSet,9,2,0
-endif
-else
-GPIO,27,0
-TaskValueSet,9,2,0
-endif
-else
-GPIO,27,0
-TaskValueSet,9,2,0
-endif
+event,EVAL_CLIMATE
+endon
 
-if [room#Temp]>=28
-if [out#Temp]>=27
-if [var#75]=1
-PCFGPIO,7,1
-TaskValueSet,9,3,1
+on room#Humi do
+let,90,1
+event,EVAL_CLIMATE
+endon
+
+on out#Temp do
+let,90,1
+event,EVAL_XTEN
+event,EVAL_BOILER
+event,EVAL_CLIMATE
+endon
+
+on tank#Temp do
+let,90,1
+event,EVAL_XTEN
+event,EVAL_BOILER
+event,EVAL_CLIMATE
+endon
+
+// ===== DHW =====
+on event,EVAL_DHW do
+if [pwr#State]=1
+ if [var#40]=1
+  PCFGPIO,5,1
+  TaskValueSet,st_main,2,1
+ elseif [var#40]=2
+  if [var#50]=1
+   PCFGPIO,5,1
+   TaskValueSet,st_main,2,1
+  elseif [var#51]=1
+   PCFGPIO,5,1
+   TaskValueSet,st_main,2,1
+  else
+   PCFGPIO,5,0
+   TaskValueSet,st_main,2,0
+  endif
+ else
+  PCFGPIO,5,0
+  TaskValueSet,st_main,2,0
+ endif
 else
-PCFGPIO,7,0
-TaskValueSet,9,3,0
-endif
-else
-PCFGPIO,7,0
-TaskValueSet,9,3,0
-endif
-else
-PCFGPIO,7,0
-TaskValueSet,9,3,0
+ PCFGPIO,5,0
+ TaskValueSet,st_main,2,0
 endif
 endon
 
-//===== ROOM HUMI =====
-on room#Humi do
-let,90,1
+// ===== XTEN =====
+on event,EVAL_XTEN do
+if [pwr#State]=1 and [tank#Temp]<80
+ if [var#43]=1
+  PCFGPIO,4,1
+  TaskValueSet,st_main,3,1
+ elseif [var#43]=2 and [out#Temp]<16
+  PCFGPIO,4,1
+  TaskValueSet,st_main,3,1
+ else
+  PCFGPIO,4,0
+  TaskValueSet,st_main,3,0
+ endif
+else
+ PCFGPIO,4,0
+ TaskValueSet,st_main,3,0
+endif
+endon
 
-if [var#41]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#41]=2
-PCFGPIO,8,0
-TaskValueSet,9,4,0
-
+// ===== BOILER =====
+on event,EVAL_BOILER do
+if [pwr#State]=0
+ event,BOILER_OFF
+elseif [tank#Temp]>=80
+ event,BOILER_OFF
+elseif [out#Temp]>=16
+ event,BOILER_OFF
 elseif [st_climate#ac]=1
-PCFGPIO,8,0
-TaskValueSet,9,4,0
-
-elseif [room#Humi]>65
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [room#Temp]>=28
-if [out#Temp]<=25
-if [var#75]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
+ event,BOILER_OFF
+elseif [tank#Temp]<30 and [out#Temp]<16
+ event,BOILER_ON
+elseif [st_main#boiler]=1 and [tank#Temp]<35 and [out#Temp]<16
+ event,BOILER_ON
+elseif [var#53]=1 and [tank#Temp]<70 and [out#Temp]<16
+ event,BOILER_ON
 else
-PCFGPIO,8,0
-TaskValueSet,9,4,0
+ event,BOILER_OFF
 endif
+endon
+
+on event,BOILER_ON do
+PCFGPIO,6,1
+TaskValueSet,st_main,4,1
+PCFGPIO,3,1
+TaskValueSet,st_climate,1,1
+endon
+
+on event,BOILER_OFF do
+if [st_main#boiler]=1
+ TimerSet,1,300
+ PCFGPIO,3,1
+ TaskValueSet,st_climate,1,1
 else
-PCFGPIO,8,0
-TaskValueSet,9,4,0
+ PCFGPIO,3,0
+ TaskValueSet,st_climate,1,0
 endif
-elseif [var#61]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
+PCFGPIO,6,0
+TaskValueSet,st_main,4,0
+endon
 
-elseif [var#62]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#63]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#64]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#65]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#66]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#67]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-elseif [var#68]=1
-PCFGPIO,8,1
-TaskValueSet,9,4,1
-
-else
-PCFGPIO,8,0
-TaskValueSet,9,4,0
+on Rules#Timer=1 do
+if [st_main#boiler]=0
+ PCFGPIO,3,0
+ TaskValueSet,st_climate,1,0
 endif
 endon

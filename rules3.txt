@@ -1,102 +1,461 @@
-//===== XTEN =====
-on out#Temp do
-let,90,1
-
-if [var#43]=1
-if [tank#Temp]<80
-PCFGPIO,4,1
-TaskValueSet,10,3,1
-else
-PCFGPIO,4,0
-TaskValueSet,10,3,0
-endif
-
-elseif [var#43]=2
-PCFGPIO,4,0
-TaskValueSet,10,3,0
-
-elseif [out#Temp]<16
-if [tank#Temp]<80
-PCFGPIO,4,1
-TaskValueSet,10,3,1
-else
-PCFGPIO,4,0
-TaskValueSet,10,3,0
-endif
-
-else
-PCFGPIO,4,0
-TaskValueSet,10,3,0
-endif
+// ===== NIGHT TARIFF WINDOW 23:00-07:00 =====
+on Clock#Time=All,23:* do
+let,53,1
+event,EVAL_BOILER
 endon
 
-//===== BOILER + PUMP =====
-on tank#Temp do
-let,90,1
-
-if [pwr#State]=0
-PCFGPIO,6,0
-TaskValueSet,10,4,0
-
-if [st_main#boiler]=1
-TimerSet,1,300
-PCFGPIO,3,1
-TaskValueSet,9,1,1
-else
-PCFGPIO,3,0
-TaskValueSet,9,1,0
-endif
-
-elseif [st_climate#ac]=1
-PCFGPIO,6,0
-TaskValueSet,10,4,0
-
-if [st_main#boiler]=1
-TimerSet,1,300
-PCFGPIO,3,1
-TaskValueSet,9,1,1
-else
-PCFGPIO,3,0
-TaskValueSet,9,1,0
-endif
-
-elseif [tank#Temp]>=80
-PCFGPIO,6,0
-TaskValueSet,10,4,0
-
-if [st_main#boiler]=1
-TimerSet,1,300
-PCFGPIO,3,1
-TaskValueSet,9,1,1
-else
-PCFGPIO,3,0
-TaskValueSet,9,1,0
-endif
-
-elseif [tank#Temp]<30 and [out#Temp]<16
-PCFGPIO,6,1
-TaskValueSet,10,4,1
-PCFGPIO,3,1
-TaskValueSet,9,1,1
-
-elseif [var#92]=1 and [tank#Temp]<70 and [out#Temp]<16
-PCFGPIO,6,1
-TaskValueSet,10,4,1
-PCFGPIO,3,1
-TaskValueSet,9,1,1
-
-elseif [tank#Temp]>=35 and [var#92]=0
-PCFGPIO,6,0
-TaskValueSet,10,4,0
-TimerSet,1,300
-PCFGPIO,3,1
-TaskValueSet,9,1,1
-
-endif
+on Clock#Time=All,00:* do
+let,53,1
+event,EVAL_BOILER
 endon
 
-//===== PUMP RUN-ON =====
-on Rules#Timer=1 do
-PCFGPIO,3,0
-TaskValueSet,9,1,0
+on Clock#Time=All,01:* do
+let,53,1
+event,EVAL_BOILER
+endon
+
+on Clock#Time=All,02:* do
+let,53,1
+event,EVAL_BOILER
+endon
+
+on Clock#Time=All,03:* do
+let,53,1
+event,EVAL_BOILER
+endon
+
+on Clock#Time=All,04:* do
+let,53,1
+event,EVAL_BOILER
+endon
+
+on Clock#Time=All,05:* do
+let,53,1
+event,EVAL_BOILER
+endon
+
+on Clock#Time=All,06:* do
+let,53,1
+event,EVAL_BOILER
+endon
+
+on Clock#Time=All,07:00 do
+let,53,0
+event,EVAL_BOILER
+endon
+
+on Time#Initialized do
+event,EVAL_DHW
+event,EVAL_BOILER
+event,EVAL_CLIMATE
+event,EVAL_UF
+endon
+
+// ===== DHW WINDOWS =====
+on Clock#Time=All,05:* do
+let,50,1
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,06:* do
+let,50,1
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,05:00 do
+let,50,1
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,07:00 do
+let,50,0
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,15:00 do
+let,51,1
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,15:* do
+let,51,1
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,16:* do
+let,51,1
+event,EVAL_DHW
+endon
+
+on Clock#Time=All,17:00 do
+let,51,0
+event,EVAL_DHW
+endon
+
+// ===== AC / COOLING WINDOW 09:00-18:00 =====
+on Clock#Time=All,09:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,10:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,11:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,12:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,13:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,14:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,15:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,16:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,17:* do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,09:00 do
+let,52,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,18:00 do
+let,52,0
+event,EVAL_CLIMATE
+endon
+
+// ===== VENT SLOTS =====
+on Clock#Time=All,02:0* do
+let,61,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,02:1* do
+let,61,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,02:2* do
+let,61,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,02:00 do
+let,61,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,02:30 do
+let,61,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,05:0* do
+let,62,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,05:1* do
+let,62,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,05:2* do
+let,62,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,05:3* do
+let,62,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,05:00 do
+let,62,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,05:40 do
+let,62,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,06:5* do
+let,63,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,07:0* do
+let,63,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,07:1* do
+let,63,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,07:2* do
+let,63,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,06:50 do
+let,63,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,07:30 do
+let,63,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,08:0* do
+let,64,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,08:1* do
+let,64,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,08:2* do
+let,64,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,08:00 do
+let,64,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,08:30 do
+let,64,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,14:0* do
+let,65,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,14:1* do
+let,65,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,14:00 do
+let,65,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,14:20 do
+let,65,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,17:0* do
+let,66,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,17:1* do
+let,66,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,17:2* do
+let,66,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,17:00 do
+let,66,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,17:30 do
+let,66,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,20:0* do
+let,67,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,20:1* do
+let,67,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,20:2* do
+let,67,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,20:00 do
+let,67,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,20:30 do
+let,67,0
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,22:* do
+let,68,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,23:0* do
+let,68,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,23:1* do
+let,68,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,23:2* do
+let,68,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,23:3* do
+let,68,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,22:00 do
+let,68,1
+event,EVAL_CLIMATE
+endon
+
+on Clock#Time=All,23:40 do
+let,68,0
+event,EVAL_CLIMATE
+endon
+
+// ===== UF WINDOWS =====
+on Clock#Time=All,02:* do
+let,54,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,03:* do
+let,54,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,02:00 do
+let,54,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,04:00 do
+let,54,0
+event,EVAL_UF
+endon
+
+on Clock#Time=All,12:00 do
+let,55,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,12:* do
+let,55,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,13:* do
+let,55,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,14:00 do
+let,55,0
+event,EVAL_UF
+endon
+
+on Clock#Time=All,15:3* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,15:4* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,15:5* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,15:30 do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,16:* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,17:* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,18:* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,19:* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,20:* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,21:* do
+let,56,1
+event,EVAL_UF
+endon
+
+on Clock#Time=All,22:00 do
+let,56,0
+event,EVAL_UF
 endon

@@ -1,114 +1,102 @@
-
-//===== NIGHT FLAG =====
-on Clock#Time=All,23:* do
-let,92,1
-endon
-
-on Clock#Time=All,00:* do
-let,92,1
-endon
-
-on Clock#Time=All,01:* do
-let,92,1
-endon
-
-on Clock#Time=All,02:* do
-let,92,1
-endon
-
-on Clock#Time=All,03:* do
-let,92,1
-endon
-
-on Clock#Time=All,04:* do
-let,92,1
-endon
-
-on Clock#Time=All,05:* do
-let,92,1
-endon
-
-on Clock#Time=All,06:00 do
-let,92,0
-endon
-
-//===== DAY FLAG (окно вентиляции/охлаждения) =====
-on Clock#Time=All,08:00 do
-let,75,1
-endon
-
-on Clock#Time=All,22:00 do
-let,75,0
-endon
-
-//===== DHW (бойлер по расписанию) =====
-on Clock#Time=All,06:00 do
-if [var#40]=2
-PCFGPIO,5,1
-TaskValueSet,10,2,1
-elseif [var#40]=1
-// DHW принудительно ON: расписание не вмешивается
-elseif [var#40]=0
-// DHW принудительно OFF: расписание не вмешивается
+// ===== CLIMATE =====
+on event,EVAL_CLIMATE do
+// AC
+if [var#52]=1 and [room#Temp]>=28 and [out#Temp]>=27
+ PCFGPIO,7,1
+ TaskValueSet,st_climate,3,1
 else
-// fallback: для неизвестного режима ничего не меняем
+ PCFGPIO,7,0
+ TaskValueSet,st_climate,3,0
 endif
-endon
 
-on Clock#Time=All,09:00 do
-if [var#40]=2
-PCFGPIO,5,0
-TaskValueSet,10,2,0
-elseif [var#40]=1
-// DHW принудительно ON: расписание не вмешивается
-elseif [var#40]=0
-// DHW принудительно OFF: расписание не вмешивается
+// заслонка: AC=1 -> закрыть, иначе открыть
+if [st_climate#ac]=1
+ Servo,1,19,-85
+ TaskValueSet,st_aux,1,1
 else
-// fallback: для неизвестного режима ничего не меняем
+ Servo,1,19,85
+ TaskValueSet,st_aux,1,0
 endif
-endon
 
-on Clock#Time=All,18:00 do
-if [var#40]=2
-PCFGPIO,5,1
-TaskValueSet,10,2,1
-elseif [var#40]=1
-// DHW принудительно ON: расписание не вмешивается
-elseif [var#40]=0
-// DHW принудительно OFF: расписание не вмешивается
+// отопительный насос
+if [st_climate#ac]=1
+ GPIO,27,0
+ TaskValueSet,st_climate,2,0
+elseif [out#Temp]<16 and [room#Temp]<22.5 and [tank#Temp]>25
+ GPIO,27,1
+ TaskValueSet,st_climate,2,1
 else
-// fallback: для неизвестного режима ничего не меняем
+ GPIO,27,0
+ TaskValueSet,st_climate,2,0
 endif
-endon
 
-on Clock#Time=All,22:00 do
-if [var#40]=2
-PCFGPIO,5,0
-TaskValueSet,10,2,0
-elseif [var#40]=1
-// DHW принудительно ON: расписание не вмешивается
-elseif [var#40]=0
-// DHW принудительно OFF: расписание не вмешивается
+// вентиляция
+if [var#41]=0
+ PCFGPIO,8,0
+ TaskValueSet,st_climate,4,0
+elseif [st_climate#ac]=1
+ PCFGPIO,8,0
+ TaskValueSet,st_climate,4,0
+elseif [var#41]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [room#Humi]>65
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#52]=1 and [room#Temp]>=28 and [out#Temp]<=25
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#61]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#62]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#63]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#64]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#65]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#66]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#67]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
+elseif [var#68]=1
+ PCFGPIO,8,1
+ TaskValueSet,st_climate,4,1
 else
-// fallback: для неизвестного режима ничего не меняем
+ PCFGPIO,8,0
+ TaskValueSet,st_climate,4,0
 endif
+
+event,EVAL_BOILER
 endon
 
-//===== UF (ночная дезинфекция) =====
-on Clock#Time=All,22:30 do
-if [var#42]=2
-PCFGPIO,8,1
-TaskValueSet,9,4,1
+// ===== UF =====
+on event,EVAL_UF do
+if [var#42]=0
+ GPIO,26,0
+ TaskValueSet,st_aux,2,0
 elseif [var#42]=1
-// UF принудительно ON: расписание не вмешивается
-elseif [var#42]=0
-// UF принудительно OFF: расписание не вмешивается
+ GPIO,26,1
+ TaskValueSet,st_aux,2,1
+elseif [var#54]=1
+ GPIO,26,1
+ TaskValueSet,st_aux,2,1
+elseif [var#55]=1
+ GPIO,26,1
+ TaskValueSet,st_aux,2,1
+elseif [var#56]=1
+ GPIO,26,1
+ TaskValueSet,st_aux,2,1
 else
-// fallback: для неизвестного режима ничего не меняем
+ GPIO,26,0
+ TaskValueSet,st_aux,2,0
 endif
-endon
-
-on Clock#Time=All,06:00 do
-PCFGPIO,8,0
-TaskValueSet,9,4,0
 endon

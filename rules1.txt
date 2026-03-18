@@ -1,27 +1,58 @@
 // ===== SYSTEM BOOT =====
 on System#Boot do
-// безопасное состояние
+// безопасное состояние выходов
 PCFGPIO,1,1
 PCFGPIO,2,0
-TaskValueSet,st_main,1,1
-
+PCFGPIO,3,0
 PCFGPIO,4,0
-TaskValueSet,10,3,0
-
 PCFGPIO,5,0
-TaskValueSet,10,2,0
-
+PCFGPIO,6,0
+PCFGPIO,7,0
 PCFGPIO,8,0
-TaskValueSet,9,4,0
-
+GPIO,26,0
 GPIO,27,0
-TaskValueSet,9,2,0
+Servo,1,19,85
 
-// режимы по умолчанию (AUTO)
+// статусы
+TaskValueSet,st_main,1,1
+TaskValueSet,st_main,2,0
+TaskValueSet,st_main,3,0
+TaskValueSet,st_main,4,0
+
+TaskValueSet,st_climate,1,0
+TaskValueSet,st_climate,2,0
+TaskValueSet,st_climate,3,0
+TaskValueSet,st_climate,4,0
+
+TaskValueSet,st_aux,1,0
+TaskValueSet,st_aux,2,0
+
+// режимы по умолчанию: AUTO
 let,40,2
-let,41,0
-let,42,0
-let,43,0
+let,41,2
+let,42,2
+let,43,2
+TaskValueSet,st_mode,1,2
+TaskValueSet,st_mode,2,2
+TaskValueSet,st_mode,3,2
+TaskValueSet,st_mode,4,2
+
+// окна расписаний
+let,50,0
+let,51,0
+let,52,0
+let,53,0
+let,54,0
+let,55,0
+let,56,0
+let,61,0
+let,62,0
+let,63,0
+let,64,0
+let,65,0
+let,66,0
+let,67,0
+let,68,0
 
 // watchdog
 let,90,0
@@ -30,6 +61,7 @@ endon
 
 // ===== WATER LEAK =====
 on leak#State do
+let,90,1
 if [leak#State]=1
 PCFGPIO,1,0
 PCFGPIO,2,1
@@ -39,106 +71,100 @@ PCFGPIO,1,1
 PCFGPIO,2,0
 TaskValueSet,st_main,1,1
 else
-// fallback в безопасное состояние
 PCFGPIO,1,1
 PCFGPIO,2,0
 TaskValueSet,st_main,1,1
 endif
+
+event,EVAL_DHW
+event,EVAL_XTEN
+event,EVAL_BOILER
+event,EVAL_CLIMATE
+event,EVAL_UF
 endon
 
-// ===== POWER CONTROL =====
+// ===== POWER =====
 on pwr#State do
-if [pwr#State]=0
-PCFGPIO,5,0
-TaskValueSet,10,2,0
-PCFGPIO,4,0
-TaskValueSet,10,3,0
-elseif [pwr#State]=1
-// питание включено: без принудительных действий, логика ниже по событиям/режимам
-endif
+let,90,1
+event,EVAL_DHW
+event,EVAL_XTEN
+event,EVAL_BOILER
+event,EVAL_CLIMATE
+event,EVAL_UF
 endon
 
 // ===== DHW MODE =====
 on event,DHWMODE=0 do
 let,40,0
-PCFGPIO,5,0
-TaskValueSet,10,2,0
 TaskValueSet,st_mode,1,0
+event,EVAL_DHW
 endon
 
 on event,DHWMODE=1 do
 let,40,1
-PCFGPIO,5,1
-TaskValueSet,10,2,1
 TaskValueSet,st_mode,1,1
+event,EVAL_DHW
 endon
 
 on event,DHWMODE=2 do
 let,40,2
 TaskValueSet,st_mode,1,2
+event,EVAL_DHW
 endon
 
 // ===== VENT MODE =====
 on event,VENTMODE=0 do
 let,41,0
 TaskValueSet,st_mode,2,0
+event,EVAL_CLIMATE
 endon
 
 on event,VENTMODE=1 do
 let,41,1
 TaskValueSet,st_mode,2,1
+event,EVAL_CLIMATE
 endon
 
 on event,VENTMODE=2 do
 let,41,2
 TaskValueSet,st_mode,2,2
+event,EVAL_CLIMATE
 endon
 
 // ===== UF MODE =====
 on event,UFMODE=0 do
 let,42,0
 TaskValueSet,st_mode,3,0
+event,EVAL_UF
 endon
 
 on event,UFMODE=1 do
 let,42,1
 TaskValueSet,st_mode,3,1
+event,EVAL_UF
 endon
 
 on event,UFMODE=2 do
 let,42,2
 TaskValueSet,st_mode,3,2
+event,EVAL_UF
 endon
 
 // ===== XTEN MODE =====
 on event,XTENMODE=0 do
 let,43,0
 TaskValueSet,st_mode,4,0
+event,EVAL_XTEN
 endon
 
 on event,XTENMODE=1 do
 let,43,1
 TaskValueSet,st_mode,4,1
+event,EVAL_XTEN
 endon
 
 on event,XTENMODE=2 do
 let,43,2
 TaskValueSet,st_mode,4,2
-endon
-
-// ===== AC STATE (серво заслонка) =====
-on st_climate#ac do
-if [st_climate#ac]=1
-// AC включен → заслонка закрыта
-Servo,1,19,-85
-TaskValueSet,8,1,1
-elseif [st_climate#ac]=0
-// AC выключен → заслонка открыта
-Servo,1,19,85
-TaskValueSet,8,1,0
-else
-// fallback: считаем AC выключенным
-Servo,1,19,85
-TaskValueSet,8,1,0
-endif
+event,EVAL_XTEN
 endon
