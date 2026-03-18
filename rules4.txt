@@ -1,0 +1,84 @@
+
+//===== NIGHT FLAG =====
+on Clock#Time=All,23:* do
+let,92,1
+endon
+
+on Clock#Time=All,00:* do
+let,92,1
+endon
+
+on Clock#Time=All,01:* do
+let,92,1
+endon
+
+on Clock#Time=All,02:* do
+let,92,1
+endon
+
+on Clock#Time=All,03:* do
+let,92,1
+endon
+
+on Clock#Time=All,04:* do
+let,92,1
+endon
+
+on Clock#Time=All,05:* do
+let,92,1
+endon
+
+on Clock#Time=All,06:00 do
+let,92,0
+endon
+
+//===== DAY FLAG (окно вентиляции/охлаждения) =====
+on Clock#Time=All,08:00 do
+let,75,1
+endon
+
+on Clock#Time=All,22:00 do
+let,75,0
+endon
+
+//===== DHW (бойлер по расписанию) =====
+on Clock#Time=All,06:00 do
+if [var#40]=2
+PCFGPIO,5,1
+TaskValueSet,10,2,1
+endif
+endon
+
+on Clock#Time=All,09:00 do
+if [var#40]=2
+PCFGPIO,5,0
+TaskValueSet,10,2,0
+endif
+endon
+
+on Clock#Time=All,18:00 do
+if [var#40]=2
+PCFGPIO,5,1
+TaskValueSet,10,2,1
+endif
+endon
+
+on Clock#Time=All,22:00 do
+if [var#40]=2
+PCFGPIO,5,0
+TaskValueSet,10,2,0
+endif
+endon
+
+//===== UF (ночная дезинфекция) =====
+on Clock#Time=All,22:30 do
+if [var#42]=2
+PCFGPIO,8,1
+TaskValueSet,9,4,1
+endif
+endon
+
+on Clock#Time=All,06:00 do
+PCFGPIO,8,0
+TaskValueSet,9,4,0
+endon

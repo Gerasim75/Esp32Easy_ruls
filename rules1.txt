@@ -1,0 +1,129 @@
+// ===== SYSTEM BOOT =====
+on System#Boot do
+// безопасное состояние
+PCFGPIO,1,1
+PCFGPIO,2,0
+TaskValueSet,st_main,1,1
+
+PCFGPIO,4,0
+TaskValueSet,10,3,0
+
+PCFGPIO,5,0
+TaskValueSet,10,2,0
+
+PCFGPIO,8,0
+TaskValueSet,9,4,0
+
+GPIO,27,0
+TaskValueSet,9,2,0
+
+// режимы по умолчанию (AUTO)
+let,40,2
+let,41,0
+let,42,0
+let,43,0
+
+// watchdog
+let,90,0
+let,91,0
+endon
+
+// ===== WATER LEAK =====
+on leak#State do
+if [leak#State]=1
+PCFGPIO,1,0
+PCFGPIO,2,1
+TaskValueSet,st_main,1,0
+else
+PCFGPIO,1,1
+PCFGPIO,2,0
+TaskValueSet,st_main,1,1
+endif
+endon
+
+// ===== POWER CONTROL =====
+on pwr#State do
+if [pwr#State]=0
+PCFGPIO,5,0
+TaskValueSet,10,2,0
+PCFGPIO,4,0
+TaskValueSet,10,3,0
+endif
+endon
+
+// ===== DHW MODE =====
+on event,DHWMODE=0 do
+let,40,0
+TaskValueSet,st_mode,1,0
+endon
+
+on event,DHWMODE=1 do
+let,40,1
+TaskValueSet,st_mode,1,1
+endon
+
+on event,DHWMODE=2 do
+let,40,2
+TaskValueSet,st_mode,1,2
+endon
+
+// ===== VENT MODE =====
+on event,VENTMODE=0 do
+let,41,0
+TaskValueSet,st_mode,2,0
+endon
+
+on event,VENTMODE=1 do
+let,41,1
+TaskValueSet,st_mode,2,1
+endon
+
+on event,VENTMODE=2 do
+let,41,2
+TaskValueSet,st_mode,2,2
+endon
+
+// ===== UF MODE =====
+on event,UFMODE=0 do
+let,42,0
+TaskValueSet,st_mode,3,0
+endon
+
+on event,UFMODE=1 do
+let,42,1
+TaskValueSet,st_mode,3,1
+endon
+
+on event,UFMODE=2 do
+let,42,2
+TaskValueSet,st_mode,3,2
+endon
+
+// ===== XTEN MODE =====
+on event,XTENMODE=0 do
+let,43,0
+TaskValueSet,st_mode,4,0
+endon
+
+on event,XTENMODE=1 do
+let,43,1
+TaskValueSet,st_mode,4,1
+endon
+
+on event,XTENMODE=2 do
+let,43,2
+TaskValueSet,st_mode,4,2
+endon
+
+// ===== AC STATE (серво заслонка) =====
+on st_climate#ac do
+if [st_climate#ac]=1
+// AC включен → заслонка закрыта
+Servo,1,19,-85
+TaskValueSet,8,1,1
+else
+// AC выключен → заслонка открыта
+Servo,1,19,85
+TaskValueSet,8,1,0
+endif
+endon
