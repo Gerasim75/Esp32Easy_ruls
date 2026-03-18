@@ -168,9 +168,25 @@ else
  let,56,0
 endif
 
+TimerSet,2,1
+endon
+
+on Rules#Timer=2 do
 event,EVAL_DHW
+TimerSet,3,1
+endon
+
+on Rules#Timer=3 do
 event,EVAL_BOILER
+TimerSet,4,1
+endon
+
+on Rules#Timer=4 do
 event,EVAL_CLIMATE
+TimerSet,5,1
+endon
+
+on Rules#Timer=5 do
 event,EVAL_UF
 endon
 
