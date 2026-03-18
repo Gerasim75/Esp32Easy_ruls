@@ -2,17 +2,27 @@
 on out#Temp do
 let,90,1
 
-if [var#43]=1 and [tank#Temp]<80
+if [var#43]=1
+if [tank#Temp]<80
 PCFGPIO,4,1
 TaskValueSet,10,3,1
+else
+PCFGPIO,4,0
+TaskValueSet,10,3,0
+endif
 
 elseif [var#43]=2
 PCFGPIO,4,0
 TaskValueSet,10,3,0
 
-elseif [out#Temp]<16 and [tank#Temp]<80
+elseif [out#Temp]<16
+if [tank#Temp]<80
 PCFGPIO,4,1
 TaskValueSet,10,3,1
+else
+PCFGPIO,4,0
+TaskValueSet,10,3,0
+endif
 
 else
 PCFGPIO,4,0
@@ -24,7 +34,33 @@ endon
 on tank#Temp do
 let,90,1
 
-if [pwr#State]=0 or [st_climate#ac]=1 or [tank#Temp]>=80
+if [pwr#State]=0
+PCFGPIO,6,0
+TaskValueSet,10,4,0
+
+if [st_main#boiler]=1
+TimerSet,1,300
+PCFGPIO,3,1
+TaskValueSet,9,1,1
+else
+PCFGPIO,3,0
+TaskValueSet,9,1,0
+endif
+
+elseif [st_climate#ac]=1
+PCFGPIO,6,0
+TaskValueSet,10,4,0
+
+if [st_main#boiler]=1
+TimerSet,1,300
+PCFGPIO,3,1
+TaskValueSet,9,1,1
+else
+PCFGPIO,3,0
+TaskValueSet,9,1,0
+endif
+
+elseif [tank#Temp]>=80
 PCFGPIO,6,0
 TaskValueSet,10,4,0
 

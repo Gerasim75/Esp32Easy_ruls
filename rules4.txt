@@ -46,6 +46,12 @@ on Clock#Time=All,06:00 do
 if [var#40]=2
 PCFGPIO,5,1
 TaskValueSet,10,2,1
+elseif [var#40]=1
+// DHW принудительно ON: расписание не вмешивается
+elseif [var#40]=0
+// DHW принудительно OFF: расписание не вмешивается
+else
+// fallback: для неизвестного режима ничего не меняем
 endif
 endon
 
@@ -53,6 +59,12 @@ on Clock#Time=All,09:00 do
 if [var#40]=2
 PCFGPIO,5,0
 TaskValueSet,10,2,0
+elseif [var#40]=1
+// DHW принудительно ON: расписание не вмешивается
+elseif [var#40]=0
+// DHW принудительно OFF: расписание не вмешивается
+else
+// fallback: для неизвестного режима ничего не меняем
 endif
 endon
 
@@ -60,6 +72,12 @@ on Clock#Time=All,18:00 do
 if [var#40]=2
 PCFGPIO,5,1
 TaskValueSet,10,2,1
+elseif [var#40]=1
+// DHW принудительно ON: расписание не вмешивается
+elseif [var#40]=0
+// DHW принудительно OFF: расписание не вмешивается
+else
+// fallback: для неизвестного режима ничего не меняем
 endif
 endon
 
@@ -67,6 +85,12 @@ on Clock#Time=All,22:00 do
 if [var#40]=2
 PCFGPIO,5,0
 TaskValueSet,10,2,0
+elseif [var#40]=1
+// DHW принудительно ON: расписание не вмешивается
+elseif [var#40]=0
+// DHW принудительно OFF: расписание не вмешивается
+else
+// fallback: для неизвестного режима ничего не меняем
 endif
 endon
 
@@ -75,6 +99,12 @@ on Clock#Time=All,22:30 do
 if [var#42]=2
 PCFGPIO,8,1
 TaskValueSet,9,4,1
+elseif [var#42]=1
+// UF принудительно ON: расписание не вмешивается
+elseif [var#42]=0
+// UF принудительно OFF: расписание не вмешивается
+else
+// fallback: для неизвестного режима ничего не меняем
 endif
 endon
 
