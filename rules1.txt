@@ -55,6 +55,7 @@ let,67,0
 let,68,0
 let,71,0
 let,72,0
+let,73,0
 
 // watchdog
 let,90,0

@@ -112,6 +112,7 @@ endon
 
 on BOILER_ON_EMERG do
 LogEntry,'BOILER -> ON (EMERGENCY)'
+let,73,0
 PCFGPIO,6,1
 TaskValueSet,st_main,4,1
 PCFGPIO,3,1
@@ -120,6 +121,7 @@ endon
 
 on BOILER_ON_NIGHT do
 LogEntry,'BOILER -> ON (NIGHT)'
+let,73,0
 PCFGPIO,6,1
 TaskValueSet,st_main,4,1
 PCFGPIO,3,1
@@ -128,6 +130,7 @@ endon
 
 on BOILER_ON_HOLD do
 LogEntry,'BOILER -> ON (HOLD)'
+let,73,0
 PCFGPIO,6,1
 TaskValueSet,st_main,4,1
 PCFGPIO,3,1
@@ -137,10 +140,13 @@ endon
 on BOILER_OFF do
 if [st_main#boiler]=1
  LogEntry,'RUNON ARMED (300s)'
+ let,73,1
  LogEntry,'BOILER -> OFF (RUN-ON)'
  TimerSet,1,300
  PCFGPIO,3,1
  TaskValueSet,st_climate,1,1
+elseif [var#73]=1
+ LogEntry,'RUNON HOLD (ALREADY ACTIVE)'
 else
  LogEntry,'RUNON SKIPPED (BOILER ALREADY OFF)'
  LogEntry,'BOILER -> OFF'
@@ -153,6 +159,7 @@ endon
 
 on Rules#Timer=1 do
 LogEntry,'RUNON FIRED'
+let,73,0
 if [st_main#boiler]=0
  PCFGPIO,3,0
  TaskValueSet,st_climate,1,0
