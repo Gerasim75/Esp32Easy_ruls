@@ -230,9 +230,9 @@ if [var#42]=2
    LogEntry,'UF -> START (POST-VENT SUMMER)'
    let,74,0
    let,75,1
-   TimerSet,8,[var#77]
+   TimerSet,9,[var#77]
   endif
-  event,EVAL_UF
+  TimerSet,8,1
  else
   LogEntry,'UF -> SKIP (NO OUT SENSOR)'
  endif
@@ -287,6 +287,10 @@ endif
 endon
 
 on Rules#Timer=8 do
+event,EVAL_UF
+endon
+
+on Rules#Timer=9 do
 if [var#75]=1
  LogEntry,'UF -> OFF (SUMMER TIMER)'
  let,75,0
