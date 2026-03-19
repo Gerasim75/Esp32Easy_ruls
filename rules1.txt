@@ -57,6 +57,20 @@ let,71,0
 let,72,0
 let,73,0
 
+// кэш последних валидных показаний датчиков
+let,101,22
+let,102,50
+let,103,10
+let,104,40
+let,111,0
+let,112,0
+let,113,0
+let,114,0
+let,121,99
+let,122,99
+let,123,99
+let,124,99
+
 // watchdog
 let,90,0
 let,91,0
@@ -64,6 +78,40 @@ endon
 
 // ===== WATCHDOG =====
 on Clock#Time=All,**:** do
+let,92,0
+if [var#111]=1
+ let,121,[var#121]+1
+ if [var#121]>=11
+  let,111,0
+  LogEntry,'ROOM TEMP STALE'
+  let,92,1
+ endif
+endif
+if [var#112]=1
+ let,122,[var#122]+1
+ if [var#122]>=11
+  let,112,0
+  LogEntry,'ROOM HUMI STALE'
+  let,92,1
+ endif
+endif
+if [var#113]=1
+ let,123,[var#123]+1
+ if [var#123]>=31
+  let,113,0
+  LogEntry,'OUT TEMP STALE'
+  let,92,1
+ endif
+endif
+if [var#114]=1
+ let,124,[var#124]+1
+ if [var#124]>=31
+  let,114,0
+  LogEntry,'TANK TEMP STALE'
+  let,92,1
+ endif
+endif
+
 if [var#90]=1
  let,90,0
  let,91,0
@@ -74,6 +122,16 @@ else
   reboot
  endif
 endif
+
+if [var#92]=1
+ TimerSet,6,1
+endif
+endon
+
+on Rules#Timer=6 do
+event,EVAL_XTEN
+event,EVAL_BOILER
+event,EVAL_CLIMATE
 endon
 
 // ===== WATER LEAK =====

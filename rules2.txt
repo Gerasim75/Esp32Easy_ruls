@@ -1,26 +1,54 @@
 // ===== SENSOR-DRIVEN EVALUATION =====
 on room#Temp do
 let,90,1
-event,EVAL_CLIMATE
+if [room#Temp]>-10 and [room#Temp]<50
+ let,101,[room#Temp]
+ let,111,1
+ let,121,0
+ event,EVAL_CLIMATE
+else
+ LogEntry,'ROOM TEMP INVALID'
+endif
 endon
 
 on room#Humi do
 let,90,1
-event,EVAL_CLIMATE
+if [room#Humi]>=0 and [room#Humi]<=100
+ let,102,[room#Humi]
+ let,112,1
+ let,122,0
+ event,EVAL_CLIMATE
+else
+ LogEntry,'ROOM HUMI INVALID'
+endif
 endon
 
 on out#Temp do
 let,90,1
-event,EVAL_XTEN
-event,EVAL_BOILER
-event,EVAL_CLIMATE
+if [out#Temp]>-40 and [out#Temp]<60
+ let,103,[out#Temp]
+ let,113,1
+ let,123,0
+ event,EVAL_XTEN
+ event,EVAL_BOILER
+ event,EVAL_CLIMATE
+else
+ LogEntry,'OUT TEMP INVALID'
+endif
 endon
 
 on tank#Temp do
 let,90,1
-event,EVAL_XTEN
-event,EVAL_BOILER
-event,EVAL_CLIMATE
+if [tank#Temp]>0 and [tank#Temp]<95
+ let,104,[tank#Temp]
+ let,114,1
+ let,124,0
+ event,EVAL_XTEN
+ event,EVAL_BOILER
+ event,EVAL_CLIMATE
+else
+ LogEntry,'TANK TEMP INVALID'
+endif
 endon
 
 // ===== DHW =====
@@ -58,32 +86,48 @@ endon
 
 // ===== XTEN =====
 on EVAL_XTEN do
-if [pwr#State]=1 and [tank#Temp]<80
- if [var#43]=1
-  LogEntry,'XTEN -> ON (FORCED)'
-  PCFGPIO,4,1
-  TaskValueSet,st_main,3,1
- elseif [var#43]=2
-  if [out#Temp]<15
-   LogEntry,'XTEN -> ON (AUTO COLD)'
-   PCFGPIO,4,1
-   TaskValueSet,st_main,3,1
-  elseif [st_main#xten]=1 and [out#Temp]<17
-   LogEntry,'XTEN -> ON (AUTO HOLD)'
+if [pwr#State]=0
+ LogEntry,'XTEN -> OFF (NO POWER)'
+ PCFGPIO,4,0
+ TaskValueSet,st_main,3,0
+elseif [var#114]=0
+ LogEntry,'XTEN -> OFF (NO TANK SENSOR)'
+ PCFGPIO,4,0
+ TaskValueSet,st_main,3,0
+elseif [var#104]>=80
+ LogEntry,'XTEN -> OFF (TANK HOT)'
+ PCFGPIO,4,0
+ TaskValueSet,st_main,3,0
+elseif [var#43]=1
+ LogEntry,'XTEN -> ON (FORCED)'
+ PCFGPIO,4,1
+ TaskValueSet,st_main,3,1
+elseif [var#43]=2
+ if [var#113]=0
+  if [st_main#xten]=1
+   LogEntry,'XTEN -> ON (HOLD NO OUT SENSOR)'
    PCFGPIO,4,1
    TaskValueSet,st_main,3,1
   else
-   LogEntry,'XTEN -> OFF (AUTO/WARM)'
+   LogEntry,'XTEN -> OFF (NO OUT SENSOR)'
    PCFGPIO,4,0
    TaskValueSet,st_main,3,0
   endif
+ elseif [var#103]<15
+  LogEntry,'XTEN -> ON (AUTO COLD)'
+  PCFGPIO,4,1
+  TaskValueSet,st_main,3,1
+ elseif [st_main#xten]=1 and [var#103]<17
+  LogEntry,'XTEN -> ON (AUTO HOLD)'
+  PCFGPIO,4,1
+  TaskValueSet,st_main,3,1
  else
-  LogEntry,'XTEN -> OFF (MODE OFF)'
+  LogEntry,'XTEN -> OFF (AUTO/WARM)'
   PCFGPIO,4,0
   TaskValueSet,st_main,3,0
  endif
 else
- LogEntry,'XTEN -> OFF (NO POWER OR TANK HOT)'
+ LogEntry,'XTEN -> OFF (MODE OFF)'
  PCFGPIO,4,0
  TaskValueSet,st_main,3,0
 endif
@@ -93,21 +137,38 @@ endon
 on EVAL_BOILER do
 if [pwr#State]=0
  event,BOILER_OFF
-elseif [tank#Temp]>=80
+elseif [var#114]=0
  event,BOILER_OFF
-elseif [out#Temp]>=16
+elseif [var#104]>=80
  event,BOILER_OFF
 elseif [st_climate#ac]=1
  event,BOILER_OFF
-elseif [tank#Temp]<30 and [out#Temp]<16
+elseif [var#113]=0
+ if [st_main#boiler]=1 and [var#104]<70
+  event,BOILER_ON_SENSOR_HOLD
+ else
+  event,BOILER_OFF
+ endif
+elseif [var#103]>=16
+ event,BOILER_OFF
+elseif [var#104]<30 and [var#103]<16
  event,BOILER_ON_EMERG
-elseif [var#53]=1 and [tank#Temp]<70 and [out#Temp]<16
+elseif [var#53]=1 and [var#104]<70 and [var#103]<16
  event,BOILER_ON_NIGHT
-elseif [st_main#boiler]=1 and [tank#Temp]<35 and [out#Temp]<16
+elseif [st_main#boiler]=1 and [var#104]<35 and [var#103]<16
  event,BOILER_ON_HOLD
 else
  event,BOILER_OFF
 endif
+endon
+
+on BOILER_ON_SENSOR_HOLD do
+LogEntry,'BOILER -> ON (HOLD NO OUT SENSOR)'
+let,73,0
+PCFGPIO,6,1
+TaskValueSet,st_main,4,1
+PCFGPIO,3,1
+TaskValueSet,st_climate,1,1
 endon
 
 on BOILER_ON_EMERG do

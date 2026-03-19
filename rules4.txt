@@ -1,12 +1,20 @@
 // ===== CLIMATE =====
 on EVAL_CLIMATE do
 // AC
-if [var#52]=1 and [out#Temp]>=27
- if [room#Temp]>=28
+if [var#52]=1
+ if [st_climate#ac]=1 and [var#111]=0
+  LogEntry,'AC -> ON (HOLD SENSOR)'
+  PCFGPIO,7,1
+  TaskValueSet,st_climate,3,1
+ elseif [st_climate#ac]=1 and [var#113]=0
+  LogEntry,'AC -> ON (HOLD SENSOR)'
+  PCFGPIO,7,1
+  TaskValueSet,st_climate,3,1
+ elseif [var#111]=1 and [var#113]=1 and [var#103]>=27 and [var#101]>=28
   LogEntry,'AC -> ON'
   PCFGPIO,7,1
   TaskValueSet,st_climate,3,1
- elseif [st_climate#ac]=1 and [room#Temp]>25
+ elseif [st_climate#ac]=1 and [var#111]=1 and [var#113]=1 and [var#103]>=27 and [var#101]>25
   LogEntry,'AC -> ON (HOLD)'
   PCFGPIO,7,1
   TaskValueSet,st_climate,3,1
@@ -37,12 +45,24 @@ if [st_climate#ac]=1
  LogEntry,'LPUMP -> OFF (AC ON)'
  GPIO,27,0
  TaskValueSet,st_climate,2,0
-elseif [out#Temp]<16 and [tank#Temp]>25
- if [room#Temp]<22.2
+elseif [st_climate#lpump]=1 and [var#111]=0
+ LogEntry,'LPUMP -> ON (HOLD SENSOR)'
+ GPIO,27,1
+ TaskValueSet,st_climate,2,1
+elseif [st_climate#lpump]=1 and [var#113]=0
+ LogEntry,'LPUMP -> ON (HOLD SENSOR)'
+ GPIO,27,1
+ TaskValueSet,st_climate,2,1
+elseif [st_climate#lpump]=1 and [var#114]=0
+ LogEntry,'LPUMP -> ON (HOLD SENSOR)'
+ GPIO,27,1
+ TaskValueSet,st_climate,2,1
+elseif [var#111]=1 and [var#113]=1 and [var#114]=1 and [var#103]<16 and [var#104]>25
+ if [var#101]<22.2
   LogEntry,'LPUMP -> ON (HEAT DEMAND)'
   GPIO,27,1
   TaskValueSet,st_climate,2,1
- elseif [st_climate#lpump]=1 and [room#Temp]<22.8
+ elseif [st_climate#lpump]=1 and [var#101]<22.8
   LogEntry,'LPUMP -> ON (HOLD)'
   GPIO,27,1
   TaskValueSet,st_climate,2,1
@@ -58,20 +78,24 @@ else
 endif
 
 // защелки гистерезиса вентиляции
-if [room#Humi]>65
- let,71,1
-elseif [room#Humi]<60
- let,71,0
+if [var#112]=1
+ if [var#102]>65
+  let,71,1
+ elseif [var#102]<60
+  let,71,0
+ endif
 endif
 
-if [var#52]=1 and [out#Temp]<=25
- if [room#Temp]>=28
-  let,72,1
- elseif [room#Temp]<26
+if [var#111]=1 and [var#113]=1
+ if [var#52]=1 and [var#103]<=25
+  if [var#101]>=28
+   let,72,1
+  elseif [var#101]<26
+   let,72,0
+  endif
+ else
   let,72,0
  endif
-else
- let,72,0
 endif
 
 // вентиляция
