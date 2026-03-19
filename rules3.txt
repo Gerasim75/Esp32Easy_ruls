@@ -128,7 +128,7 @@ else
 endif
 
 if %systime% >= 22:00:00
- if %systime% < 23:40:00
+ if %systime% < 22:30:00
   let,68,1
  else
   let,68,0
@@ -309,7 +309,7 @@ let,68,1
 event,EVAL_CLIMATE
 endon
 
-on Clock#Time=All,23:40 do
+on Clock#Time=All,22:30 do
 let,68,0
 event,EVAL_CLIMATE
 endon

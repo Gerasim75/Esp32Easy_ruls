@@ -6,6 +6,7 @@ if [room#Temp]>-10 and [room#Temp]<50
  let,111,1
  let,121,0
  event,EVAL_CLIMATE
+ event,EVAL_UF
 else
  LogEntry,'ROOM TEMP INVALID'
 endif
@@ -32,6 +33,7 @@ if [out#Temp]>-40 and [out#Temp]<60
  event,EVAL_XTEN
  event,EVAL_BOILER
  event,EVAL_CLIMATE
+ event,EVAL_UF
 else
  LogEntry,'OUT TEMP INVALID'
 endif

@@ -100,58 +100,100 @@ endif
 
 // вентиляция
 if [var#41]=0
+ if [st_climate#vent]=1
+  event,UF_POSTVENT
+ endif
  LogEntry,'VENT -> OFF (MODE OFF)'
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
 elseif [st_climate#ac]=1
+ if [st_climate#vent]=1
+  event,UF_POSTVENT
+ endif
  LogEntry,'VENT -> OFF (AC ON)'
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
 elseif [var#41]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (FORCED)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#71]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (HUMIDITY)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#72]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (FREE COOLING)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#61]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 61)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#62]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 62)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#63]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 63)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#64]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 64)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#65]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 65)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#66]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 66)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#67]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 67)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 elseif [var#68]=1
+ if [st_climate#vent]=0
+  event,UF_CANCEL_POSTVENT
+ endif
  LogEntry,'VENT -> ON (SLOT 68)'
  PCFGPIO,8,1
  TaskValueSet,st_climate,4,1
 else
+ if [st_climate#vent]=1
+  event,UF_POSTVENT
+ endif
  LogEntry,'VENT -> OFF'
  PCFGPIO,8,0
  TaskValueSet,st_climate,4,0
@@ -159,6 +201,37 @@ endif
 endon
 
 // ===== UF =====
+on UF_CANCEL_POSTVENT do
+let,74,0
+let,75,0
+if [var#42]=2
+ LogEntry,'UF -> OFF (VENT ON)'
+ GPIO,26,0
+ TaskValueSet,st_aux,2,0
+endif
+endon
+
+on UF_POSTVENT do
+if [var#42]=2
+ if [var#113]=1
+  if [var#103]<=16
+   LogEntry,'UF -> START (POST-VENT WINTER)'
+   let,74,1
+   let,75,0
+   TimerSet,7,[var#76]
+  else
+   LogEntry,'UF -> START (POST-VENT SUMMER)'
+   let,74,0
+   let,75,1
+   TimerSet,8,[var#77]
+  endif
+  event,EVAL_UF
+ else
+  LogEntry,'UF -> SKIP (NO OUT SENSOR)'
+ endif
+endif
+endon
+
 on EVAL_UF do
 if [var#42]=0
  LogEntry,'UF -> OFF (MODE OFF)'
@@ -168,21 +241,48 @@ elseif [var#42]=1
  LogEntry,'UF -> ON (FORCED)'
  GPIO,26,1
  TaskValueSet,st_aux,2,1
-elseif [var#54]=1
- LogEntry,'UF -> ON (WINDOW 54)'
- GPIO,26,1
- TaskValueSet,st_aux,2,1
-elseif [var#55]=1
- LogEntry,'UF -> ON (WINDOW 55)'
- GPIO,26,1
- TaskValueSet,st_aux,2,1
-elseif [var#56]=1
- LogEntry,'UF -> ON (WINDOW 56)'
+elseif [st_climate#vent]=1
+ LogEntry,'UF -> OFF (VENT ON)'
+ GPIO,26,0
+ TaskValueSet,st_aux,2,0
+elseif [var#74]=1
+ if [var#111]=1 and [var#101]>=22.8
+  LogEntry,'UF -> OFF (WINTER ROOM OK)'
+  let,74,0
+  GPIO,26,0
+  TaskValueSet,st_aux,2,0
+ elseif [var#111]=0
+  LogEntry,'UF -> ON (WINTER HOLD NO ROOM SENSOR)'
+  GPIO,26,1
+  TaskValueSet,st_aux,2,1
+ else
+  LogEntry,'UF -> ON (POST-VENT WINTER)'
+  GPIO,26,1
+  TaskValueSet,st_aux,2,1
+ endif
+elseif [var#75]=1
+ LogEntry,'UF -> ON (POST-VENT SUMMER)'
  GPIO,26,1
  TaskValueSet,st_aux,2,1
 else
  LogEntry,'UF -> OFF'
  GPIO,26,0
  TaskValueSet,st_aux,2,0
+endif
+endon
+
+on Rules#Timer=7 do
+if [var#74]=1
+ LogEntry,'UF -> OFF (WINTER TIMEOUT)'
+ let,74,0
+ event,EVAL_UF
+endif
+endon
+
+on Rules#Timer=8 do
+if [var#75]=1
+ LogEntry,'UF -> OFF (SUMMER TIMER)'
+ let,75,0
+ event,EVAL_UF
 endif
 endon
