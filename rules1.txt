@@ -180,76 +180,76 @@ event,EVAL_UF
 endon
 
 // ===== DHW MODE =====
-on event,DHWMODE=0 do
+on DHWMODE=0 do
 let,40,0
 TaskValueSet,st_mode,1,0
 event,EVAL_DHW
 endon
 
-on event,DHWMODE=1 do
+on DHWMODE=1 do
 let,40,1
 TaskValueSet,st_mode,1,1
 event,EVAL_DHW
 endon
 
-on event,DHWMODE=2 do
+on DHWMODE=2 do
 let,40,2
 TaskValueSet,st_mode,1,2
 event,EVAL_DHW
 endon
 
 // ===== VENT MODE =====
-on event,VENTMODE=0 do
+on VENTMODE=0 do
 let,41,0
 TaskValueSet,st_mode,2,0
 event,EVAL_CLIMATE
 endon
 
-on event,VENTMODE=1 do
+on VENTMODE=1 do
 let,41,1
 TaskValueSet,st_mode,2,1
 event,EVAL_CLIMATE
 endon
 
-on event,VENTMODE=2 do
+on VENTMODE=2 do
 let,41,2
 TaskValueSet,st_mode,2,2
 event,EVAL_CLIMATE
 endon
 
 // ===== UF MODE =====
-on event,UFMODE=0 do
+on UFMODE=0 do
 let,42,0
 TaskValueSet,st_mode,3,0
 event,EVAL_UF
 endon
 
-on event,UFMODE=1 do
+on UFMODE=1 do
 let,42,1
 TaskValueSet,st_mode,3,1
 event,EVAL_UF
 endon
 
-on event,UFMODE=2 do
+on UFMODE=2 do
 let,42,2
 TaskValueSet,st_mode,3,2
 event,EVAL_UF
 endon
 
 // ===== XTEN MODE =====
-on event,XTENMODE=0 do
+on XTENMODE=0 do
 let,43,0
 TaskValueSet,st_mode,4,0
 event,EVAL_XTEN
 endon
 
-on event,XTENMODE=1 do
+on XTENMODE=1 do
 let,43,1
 TaskValueSet,st_mode,4,1
 event,EVAL_XTEN
 endon
 
-on event,XTENMODE=2 do
+on XTENMODE=2 do
 let,43,2
 TaskValueSet,st_mode,4,2
 event,EVAL_XTEN
