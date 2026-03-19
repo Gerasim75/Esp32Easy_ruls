@@ -42,9 +42,6 @@ let,50,0
 let,51,0
 let,52,0
 let,53,0
-let,54,0
-let,55,0
-let,56,0
 let,61,0
 let,62,0
 let,63,0

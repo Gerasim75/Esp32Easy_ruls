@@ -137,37 +137,6 @@ else
  let,68,0
 endif
 
-// uf windows
-if %systime% >= 02:00:00
- if %systime% < 04:00:00
-  let,54,1
- else
-  let,54,0
- endif
-else
- let,54,0
-endif
-
-if %systime% >= 12:00:00
- if %systime% < 14:00:00
-  let,55,1
- else
-  let,55,0
- endif
-else
- let,55,0
-endif
-
-if %systime% >= 15:30:00
- if %systime% < 22:00:00
-  let,56,1
- else
-  let,56,0
- endif
-else
- let,56,0
-endif
-
 TimerSet,2,1
 endon
 
@@ -312,35 +281,4 @@ endon
 on Clock#Time=All,22:30 do
 let,68,0
 event,EVAL_CLIMATE
-endon
-
-// ===== UF WINDOWS =====
-on Clock#Time=All,02:00 do
-let,54,1
-event,EVAL_UF
-endon
-
-on Clock#Time=All,04:00 do
-let,54,0
-event,EVAL_UF
-endon
-
-on Clock#Time=All,12:00 do
-let,55,1
-event,EVAL_UF
-endon
-
-on Clock#Time=All,14:00 do
-let,55,0
-event,EVAL_UF
-endon
-
-on Clock#Time=All,15:30 do
-let,56,1
-event,EVAL_UF
-endon
-
-on Clock#Time=All,22:00 do
-let,56,0
-event,EVAL_UF
 endon
