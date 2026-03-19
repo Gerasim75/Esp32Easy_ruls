@@ -1,14 +1,12 @@
 // ===== TIME INIT =====
 on Time#Initialized do
 event,RECOVER_WINDOWS
+TimerSet,20,60
 endon
 
 on Time#Set do
 event,RECOVER_WINDOWS
-endon
-
-on Clock#Time=All,**:** do
-event,RECOVER_WINDOWS
+TimerSet,20,60
 endon
 
 on RECOVER_WINDOWS do
@@ -157,6 +155,11 @@ endon
 
 on Rules#Timer=5 do
 event,EVAL_UF
+endon
+
+on Rules#Timer=20 do
+event,RECOVER_WINDOWS
+TimerSet,20,60
 endon
 
 // ===== NIGHT TARIFF WINDOW 23:00-07:00 =====
