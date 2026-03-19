@@ -136,11 +136,13 @@ endon
 
 on BOILER_OFF do
 if [st_main#boiler]=1
+ LogEntry,'RUNON ARMED (300s)'
  LogEntry,'BOILER -> OFF (RUN-ON)'
  TimerSet,1,300
  PCFGPIO,3,1
  TaskValueSet,st_climate,1,1
 else
+ LogEntry,'RUNON SKIPPED (BOILER ALREADY OFF)'
  LogEntry,'BOILER -> OFF'
  PCFGPIO,3,0
  TaskValueSet,st_climate,1,0
@@ -150,6 +152,7 @@ TaskValueSet,st_main,4,0
 endon
 
 on Rules#Timer=1 do
+LogEntry,'RUNON FIRED'
 if [st_main#boiler]=0
  PCFGPIO,3,0
  TaskValueSet,st_climate,1,0

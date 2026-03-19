@@ -61,6 +61,20 @@ let,90,0
 let,91,0
 endon
 
+// ===== WATCHDOG =====
+on Clock#Time=All,**:** do
+if [var#90]=1
+ let,90,0
+ let,91,0
+else
+ let,91,[var#91]+1
+ if [var#91]>=5
+  LogEntry,'WATCHDOG -> REBOOT'
+  reboot
+ endif
+endif
+endon
+
 // ===== WATER LEAK =====
 on leak#State=1 do
 let,90,1
